@@ -6,7 +6,7 @@
     <body> 
         <nav>
             <div>
-                <a href="/opt/lampp/htdocs/project/index.php">Home</a><br><br>
+                <a href="../index.php">Home</a><br><br>
             </div>
         </nav>
         <form>
