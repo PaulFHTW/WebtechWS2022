@@ -2,6 +2,7 @@
 <html lang="de">
     <head>
         <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="../style/login.css" />
     </head>
     <body> 
         <nav>

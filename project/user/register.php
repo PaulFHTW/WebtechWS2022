@@ -2,6 +2,7 @@
 <html lang="de">
     <head>
         <title>Register</title>
+        <link rel="stylesheet" type="text/css" href="../style/login.css" />
     </head>
     <body> 
         <nav>
@@ -16,7 +17,8 @@
             <input type="text" id="username" name="username"><br>
             <label for="password">Passwort: </label><br>
             <input type="password" id="password" name="password"><br>
-            <label for="confirmpassword" id="confirmpassword" name="confirmpassword">Passwort bestaetigen: </label><br><br>
+            <label for="confirmpassword" id="confirmpassword" name="confirmpassword">Passwort bestaetigen: </label><br>
+            <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
             <input type="submit" value="Submit">
         </form>
     </body>

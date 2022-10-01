@@ -2,17 +2,17 @@
 <html lang="de">
     <head>
         <title>Index</title>
-        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="stylesheet" type="text/css" href="style/index.css" />
     </head>
     <body>
-    <?php echo "Habbo Hotel"?>
         <nav>
             <div>
-                <a href="navigation/impressum.html">Impressum</a><br>
-                <a href="navigation/faq.html">FAQ</a><br>
-                <a href="user/register.php">Register</a><br>
-                <a href="user/login.php">Login</a><br>
+                <a href="navigation/impressum.html">Impressum</a>
+                <a href="navigation/faq.html">FAQ</a>
+                <a href="user/register.php">Register</a>
+                <a href="user/login.php">Login</a>
             </div>
         </nav>
+        <h2>Habbo Hotel</h2>
     </body>
 </html>
