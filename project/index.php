@@ -11,6 +11,6 @@
             <a href="user/register.php">Register</a>
             <a href="user/login.php">Login</a>
         </nav>
-        <h2>Habbo Hotel</h2>
+        <h2>Habbo Hotel is the best</h2>
     </body>
 </html>
