@@ -6,13 +6,14 @@
     </head>
     <body> 
         <nav>
-            <a href="../index.php">Home</a>
-            <a href="../navigation/impressum.html">Impressum</a>
-            <a href="../navigation/faq.html">FAQ</a>
-            <a href="register.php">Register</a>
-            <a href="login.php">Login</a>
+            <li><a href="../index.php">Home</a>
+            <li><a href="../navigation/impressum.html">Impressum</a>
+            <li><a href="../navigation/faq.html">FAQ</a>
+            <li><a href="register.php">Register</a>
+            <li><a href="login.php">Login</a>
         </nav>
         <form action="../index.php" method="post">
+            <p>Register</p>
             <label for="email">E-Mail: </label><br>
             <input type="email" id="email" name="email"><br>
             <label for="username">Username: </label><br>
