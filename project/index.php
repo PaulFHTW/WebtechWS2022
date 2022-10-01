@@ -7,8 +7,8 @@
     <?php echo "Habbo Hotel"?>
         <nav>
             <div>
-                <a href="file://opt/lampp/htdocs/project/navigation/impressum.html">Impressum</a><br>
-                <a href="file://opt/lampp/htdocs/project/navigation/faq.html">FAQ</a>
+                <a href="impressum.html">Impressum</a><br>
+                <a href="faq.html">FAQ</a>
             </div>
         </nav>
     </body>
