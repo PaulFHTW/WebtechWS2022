@@ -6,12 +6,10 @@
     </head>
     <body>
         <nav>
-            <div>
-                <a href="navigation/impressum.html">Impressum</a>
-                <a href="navigation/faq.html">FAQ</a>
-                <a href="user/register.php">Register</a>
-                <a href="user/login.php">Login</a>
-            </div>
+            <a href="navigation/impressum.html">Impressum</a>
+            <a href="navigation/faq.html">FAQ</a>
+            <a href="user/register.php">Register</a>
+            <a href="user/login.php">Login</a>
         </nav>
         <h2>Habbo Hotel</h2>
     </body>

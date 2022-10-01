@@ -6,11 +6,13 @@
     </head>
     <body> 
         <nav>
-            <div>
-                <a href="../index.php">Home</a><br><br>
-            </div>
+            <a href="../index.php">Home</a>
+            <a href="../navigation/impressum.html">Impressum</a>
+            <a href="../navigation/faq.html">FAQ</a>
+            <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
         </nav>
-        <form>
+        <form action="../index.php" method="post">
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username"><br>
             <label for="password">Password: </label><br>
