@@ -30,4 +30,19 @@ img{
     width: 100%;
     height: auto;
     object-fit: cover;
+    opacity: 0.75;
+}
+
+.container{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-left{
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    top: 18px;
+    left: 18px;
 }
