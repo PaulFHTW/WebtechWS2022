@@ -12,5 +12,6 @@
             <li><a href="user/login.php">Login</a>
         </nav>
         <h2>Habbo Hotel is the best</h2>
+        <img src="images/exterior-panorama.jpg" alt="woodland">
     </body>
 </html>
