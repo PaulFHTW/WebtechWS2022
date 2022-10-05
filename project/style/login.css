@@ -50,3 +50,7 @@ li a{
 li a:hover{
     background-color:lightslategray ;
 }
+
+.primary-btn{
+    background-color: grey;
+}
