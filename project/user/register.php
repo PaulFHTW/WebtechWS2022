@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Register</title>
         <link rel="stylesheet" type="text/css" href="../style/login.css" />
     </head>
