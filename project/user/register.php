@@ -23,7 +23,7 @@
             <input type="password" id="password" name="password"><br>
             <label for="confirmpassword" id="confirmpassword" name="confirmpassword">Passwort bestaetigen: </label><br>
             <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" class="primary-btn" value="Submit">
         </form>
     </body>
 </html>

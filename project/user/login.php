@@ -21,7 +21,7 @@
             <input type="password" id="password" name="password"><br><br>
             <label for="checkbox1">Eingeloggt bleiben</label>
             <input type="checkbox" id="checkbox1" name="checkbox1" value="eingeloggt bleiben"><br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" class="primary-btn" value="Submit">
         </form>
     </body>
 </html>
