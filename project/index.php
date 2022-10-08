@@ -14,7 +14,7 @@
             <li><a href="user/login.php">Login</a>
         </nav>
         <div class="container">
-            <img src="images/exterior-panorama.jpg" alt="woodland">
+            <img src="images/hotel.jpg" alt="beach-resort">
             <div class="top-left">Habbo Hotel</div>
         </div>
     </body>
