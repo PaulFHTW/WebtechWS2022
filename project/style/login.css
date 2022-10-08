@@ -5,7 +5,7 @@ body{
 }
 
 form{
-    margin-top: 100px;
+    margin-top: 80px;
     border-style: solid;
     border-color: lightgray;
     border-radius: 15px;
@@ -22,7 +22,7 @@ form p{
 }
 
 input{
-    padding: 3px;
+    padding: 4px;
     border-style: solid;
     border-radius: 5px;
 }
@@ -51,6 +51,21 @@ li a:hover{
     background-color:lightslategray ;
 }
 
+@media screen and (max-width: 800px) {
+    li{
+        display: block;
+    }
+    li a{
+        color: white;
+        margin-right:3px;
+        padding-bottom: 3px;
+        padding: 3px;
+        text-decoration: none;
+    }
+}
+
 .primary-btn{
-    background-color: grey;
+    background-color: lightgrey;
+    padding: 5px;
+    border-radius: 5px;
 }

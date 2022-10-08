@@ -7,7 +7,6 @@
     </head>
     <body>
         <nav>
-            
             <li><a href="navigation/impressum.html">Impressum</a>
             <li><a href="navigation/faq.html">FAQ</a>
             <li><a href="user/register.php">Register</a>

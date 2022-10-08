@@ -23,7 +23,25 @@ li a{
 }
 
 li a:hover{
-    background-color:gray ;
+    background-color:lightslategray ;
+}
+
+@media screen and (max-width: 800px) {
+    li{
+        display: block;
+    }
+    li a{
+        color: white;
+        margin-right:3px;
+        padding-bottom: 3px;
+        padding: 3px;
+        text-decoration: none;
+    }
+    .top-left{
+        font-size: 0px;
+        font-weight: bold;
+        position: absolute;
+    }
 }
 
 img{
