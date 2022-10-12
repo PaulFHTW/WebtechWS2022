@@ -10,10 +10,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">Habbo Hotel</a>
-                </div>
                 <ul class="nav navbar-nav">
+                    <li><a href="index.php">Home</a>
                     <li><a href="navigation/impressum.html">Impressum</a>
                     <li><a href="navigation/faq.html">FAQ</a>
                     <li><a href="user/register.php">Register</a>

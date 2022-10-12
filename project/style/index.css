@@ -11,24 +11,18 @@ body{
     padding-right: 15px;
 }
 
-.navbar-brand{
-    padding: 15px;
-    color: white;
-    font-weight: bold;
-}
-
 li{
-    display: inline;
+    display: inline-block;
 }
 
 li a{
     color: white;
-    padding: 15px;
+    margin-right: 25px;
     text-decoration: none;
 }
 
 li a:hover{
-    background-color:lightslategray ;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 800px) {
@@ -63,6 +57,7 @@ img{
 }
 
 .top-left{
+    margin-left: 35px;
     font-size: 22px;
     font-weight: bold;
     position: absolute;
