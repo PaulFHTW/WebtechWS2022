@@ -7,7 +7,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
     </head>
     <body> 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
@@ -31,5 +30,6 @@
             <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
             <input type="submit" class="primary-btn" value="Submit">
         </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
