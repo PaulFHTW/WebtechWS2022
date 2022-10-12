@@ -21,7 +21,7 @@
         <div class="container">
             <img src="images/hotel.jpg" alt="beach-resort">
         </div>
-        <h2>Planen Sie Ihren Traumurlaub</h2>
+        <p class="headline">Planen Sie Ihren Traumurlaub</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. In nulla posuere sollicitudin aliquam.<br>
             Tincidunt tortor aliquam nulla facilisi. Ut etiam sit amet nisl purus in mollis nunc. Libero id faucibus nisl tincidunt.<br>

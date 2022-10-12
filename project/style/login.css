@@ -28,9 +28,6 @@ input{
 }
 
 .navbar-default{
-    position: fixed;
-    width: 100%;
-    margin: -8px;
     background-color: darkslategrey;
     text-align: left;  
     padding-top: 15px;

@@ -2,13 +2,15 @@ body{
     background-color: white;
 }
 
-h2{
+.headline{
     text-align: center;
+    font-weight: bold;
+    font-size: 30px;
 }
+
 .navbar-default{
-    position: fixed;
-    width: 100%;
-    margin: -8px;
+    
+    
     background-color: darkslategrey;
     text-align: left;  
     padding-top: 15px;
@@ -50,9 +52,7 @@ li a:hover{
 }
 
 img{
-    margin-left: -10px;
-    margin-top: 8px;
-    width: 110%;
+    width: 100%;
     height: auto;
     object-fit: cover;
     opacity: 1;
