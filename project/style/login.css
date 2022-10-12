@@ -27,13 +27,20 @@ input{
     border-radius: 5px;
 }
 
-nav{
+.navbar{
     background-color: darkslategrey;
-    text-align: right;  
+    text-align: left;  
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.navbar-brand{
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 li{
