@@ -2,7 +2,11 @@ body{
     background-color: white;
 }
 
+h2{
+    text-align: center;
+}
 .navbar-default{
+    position: fixed;
     width: 100%;
     margin: -8px;
     background-color: darkslategrey;

@@ -5,7 +5,7 @@ body{
 }
 
 form{
-    margin-top: 80px;
+    margin-top: 180px;
     border-style: solid;
     border-color: lightgray;
     border-radius: 15px;
@@ -28,6 +28,7 @@ input{
 }
 
 .navbar-default{
+    position: fixed;
     width: 100%;
     margin: -8px;
     background-color: darkslategrey;

@@ -21,6 +21,25 @@
         <div class="container">
             <img src="images/hotel.jpg" alt="beach-resort">
         </div>
+        <h2>Planen Sie Ihren Traumurlaub</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. In nulla posuere sollicitudin aliquam.
+            Tincidunt tortor aliquam nulla facilisi. Ut etiam sit amet nisl purus in mollis nunc. Libero id faucibus nisl tincidunt.
+            Quis viverra nibh cras pulvinar mattis nunc sed blandit libero. Mauris ultrices eros in cursus turpis.
+            Nullam ac tortor vitae purus. Bibendum ut tristique et egestas.
+        </p>    
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. In nulla posuere sollicitudin aliquam.
+            Tincidunt tortor aliquam nulla facilisi. Ut etiam sit amet nisl purus in mollis nunc. Libero id faucibus nisl tincidunt.
+            Quis viverra nibh cras pulvinar mattis nunc sed blandit libero. Mauris ultrices eros in cursus turpis.
+            Nullam ac tortor vitae purus. Bibendum ut tristique et egestas.
+        </p>  
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. In nulla posuere sollicitudin aliquam.
+            Tincidunt tortor aliquam nulla facilisi. Ut etiam sit amet nisl purus in mollis nunc. Libero id faucibus nisl tincidunt.
+            Quis viverra nibh cras pulvinar mattis nunc sed blandit libero. Mauris ultrices eros in cursus turpis.
+            Nullam ac tortor vitae purus. Bibendum ut tristique et egestas.
+        </p>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
