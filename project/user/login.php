@@ -26,7 +26,7 @@
             <input type="password" id="password" name="password"><br><br>
             <label for="checkbox1">Eingeloggt bleiben</label>
             <input type="checkbox" id="checkbox1" name="checkbox1" value="eingeloggt bleiben"><br><br>
-            <input type="submit" class="primary-btn" value="Submit">
+            <button type="submit" class="primary-btn">Submit</button>
         </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>

@@ -20,7 +20,6 @@
         </nav>
         <div class="container">
             <img src="images/hotel.jpg" alt="beach-resort">
-            <div class="top-left">Habbo Hotel</div>
         </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
