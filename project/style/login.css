@@ -27,7 +27,7 @@ input{
     border-radius: 5px;
 }
 
-.navbar{
+.navbar-default{
     background-color: darkslategrey;
     text-align: left;  
     padding-top: 15px;
@@ -41,6 +41,7 @@ input{
     text-decoration: none;
     color: white;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 li{

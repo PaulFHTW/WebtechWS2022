@@ -11,13 +11,13 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                <a class="navbar-brand" href="index.php">Habbo Hotel</a>
+                    <a class="navbar-brand" href="index.php">Habbo Hotel</a>
                 </div>
                 <ul class="nav navbar-nav">
-                <li><a href="navigation/impressum.html">Impressum</a>
-                <li><a href="navigation/faq.html">FAQ</a>
-                <li><a href="user/register.php">Register</a>
-                <li><a href="user/login.php">Login</a>
+                    <li><a href="navigation/impressum.html">Impressum</a>
+                    <li><a href="navigation/faq.html">FAQ</a>
+                    <li><a href="user/register.php">Register</a>
+                    <li><a href="user/login.php">Login</a>
                 </ul>
             </div>
         </nav>
