@@ -4,8 +4,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Index</title>
         <link rel="stylesheet" type="text/css" href="style/index.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
     </head>
     <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
         <nav>
             <li><a href="navigation/impressum.html">Impressum</a>
             <li><a href="navigation/faq.html">FAQ</a>
