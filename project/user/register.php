@@ -31,6 +31,7 @@
         </div>
         </div>
     </nav>
+    <div class="user-form">
         <form action="../index.php" method="post">
             <p>Register</p>
             <label for="email">E-Mail: </label><br>
@@ -43,6 +44,7 @@
             <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
             <button type="submit" class="primary-btn">Submit</button>
         </form>
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>    </body>
     </body>
 </html>

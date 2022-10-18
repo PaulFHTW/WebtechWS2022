@@ -1,7 +1,6 @@
 
 body{
     background-color: white;
-    text-align: center;
 }
 
 form{
@@ -27,44 +26,16 @@ input{
     border-radius: 5px;
 }
 
-.navbar-default{
-    background-color: darkslategrey;
-    text-align: left;  
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-li{
-    display: inline-block;
-}
-
-li a{
-    color: white;
-    margin-right:25px;
-    text-decoration: none;
-}
-
-li a:hover{
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 800px) {
-    li{
-        display: block;
-    }
-    li a{
-        color: white;
-        margin-right:3px;
-        padding-bottom: 3px;
-        padding: 3px;
-        text-decoration: none;
-    }
-}
-
 .primary-btn{
     background-color: lightgrey;
     padding: 5px;
     border-radius: 5px;
+}
+
+.user-form{
+    text-align: center;
+}
+
+p{
+    margin-left: 15px;
 }

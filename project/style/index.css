@@ -1,59 +1,20 @@
-body{
-    background-color: white;
+.background-img{
+    margin-left: -12px;
+    width: 106%;
+    height: auto;
+}
+
+.navbar{
+    width: 100%;
+    position: fixed;
 }
 
 .headline{
-    text-align: center;
     font-weight: bold;
     font-size: 30px;
+    text-align: center;
 }
 
-.navbar-default{
-    
-    
-    background-color: darkslategrey;
-    text-align: left;  
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-li{
-    display: inline-block;
-}
-
-li a{
-    color: white;
-    margin-right: 25px;
-    text-decoration: none;
-}
-
-li a:hover{
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 800px) {
-    li{
-        display: block;
-    }
-    li a{
-        color: white;
-        margin-right:3px;
-        padding-bottom: 3px;
-        padding: 3px;
-        text-decoration: none;
-    }
-    .top-left{
-        font-size: 0px;
-        font-weight: bold;
-        position: absolute;
-    }
-}
-
-img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    opacity: 1;
+p{
+    margin-left: 15px;
 }

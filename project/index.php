@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Index</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">        
-        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="stylesheet" type="text/css" href="style/index.css" />
     </head>
     <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -30,9 +30,9 @@
         </ul>
         </div>
         </div>
-    </nav>
+    </nav> <br><br>
         <div class="container-fluid">
-            <img src="images/hotel.jpg" alt="beach-resort">
+            <img src="images/hotel.jpg" class="background-img" alt="beach-resort">
         </div>
         <p class="headline">Planen Sie Ihren Traumurlaub</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
