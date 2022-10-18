@@ -32,7 +32,7 @@
         </div>
     </nav>
     <div class="user-form">
-        <form action="../index.php" method="post">
+        <form action="../validation/register-validation.php" method="post">
             <p>Register</p>
             <label for="email">E-Mail: </label><br>
             <input type="email" id="email" name="email"><br>

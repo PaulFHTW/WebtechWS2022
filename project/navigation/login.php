@@ -32,7 +32,7 @@
         </div>
     </nav>
     <div class="user-form">
-        <form action="../index.php" method="post">
+        <form action="../validation/login-validation.php" method="post">
             <p>Log In</p>
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username"><br>
