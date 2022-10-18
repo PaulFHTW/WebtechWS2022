@@ -33,7 +33,7 @@
     </nav> <br><br>
         <div class="container-fluid">
             <img src="images/hotel.jpg" class="background-img" alt="beach-resort">
-        </div>
+        </div><br>
         <p class="headline">Planen Sie Ihren Traumurlaub</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. In nulla posuere sollicitudin aliquam.<br>
