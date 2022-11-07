@@ -7,30 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style/index.css" />
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Habbo Hotel</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="navigation/login.php">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="navigation/register.php">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="navigation/faq.html">FAQ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="navigation/impressum.html">Impressum</a>
-            </li>
-        </ul>
-        </div>
-        </div>
-    </nav> <br><br>
+    <?php include 'navigation/navbar.php'; ?>
         <div class="container-fluid">
             <img src="images/hotel.jpg" class="background-img" alt="beach-resort">
         </div><br>
