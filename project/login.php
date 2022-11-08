@@ -11,10 +11,8 @@
     <div class="user-form">
         <form action="validation/login-validation.php" method="post">
             <p>Log In</p>
-            <?php echo $nameErr;?>
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username"><br>
-            <?php echo $passwdErr;?>
             <label for="password">Passwort: </label><br>
             <input type="password" id="password" name="password"><br><br>
             <label for="checkbox1">Eingeloggt bleiben</label>

@@ -13,7 +13,6 @@
             <p>Register</p>
             <label for="email">E-Mail: </label><br>
             <input type="email" id="email" name="email"><br>
-            <?php echo $usernameErr; ?>
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username"><br>
             <label for="password">Passwort: </label><br>
