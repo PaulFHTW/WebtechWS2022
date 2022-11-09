@@ -5,21 +5,21 @@ $username = $email = $password =  "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["username"])) {
-    $usernameErr = "Username is required";
+    $usernameErr = "Username is required!";
     echo $usernameErr;
   } else {
     $username = test_input($_POST["username"]);
   }
 
   if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
+    $emailErr = "Email is required!";
     echo $emailErr;
   } else {
     $email = test_input($_POST["email"]);
   }
 
   if (empty($_POST["password"])) {
-    $passwordErr = "Password is required";
+    $passwordErr = "Password is required!";
     echo $passwordErr;
   } else {
     $password = test_input($_POST["password"]);
