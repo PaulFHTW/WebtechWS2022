@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../style/index.css" />
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">Habbo Hotel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +27,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="impressum.php">Impressum</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Logout</a>
             </li>
         </ul>
         </div>
