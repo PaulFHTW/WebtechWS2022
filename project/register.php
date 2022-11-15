@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start();?> 
 <html lang="de">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +42,7 @@
     ?>
     <?php include "navigation/navbar.php"; ?>
     <div class="user-form">
-        <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>" method="post">
             <p>Register</p>
             <label for="email">E-Mail: </label><br>
             <input type="email" id="email" name="email"><br>
