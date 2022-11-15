@@ -8,5 +8,4 @@
     else{
         echo "You are not logged in!";
     }
-    header("Location: index.php");
 ?>

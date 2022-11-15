@@ -27,7 +27,7 @@
             }
             if($_POST["password"]=="password"){
                 $_SESSION["username"] = $_POST["username"];
-                header("Location: index.php");
+                header("Location: reservierung.php");
             }
         }
 
