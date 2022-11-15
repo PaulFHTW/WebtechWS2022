@@ -4,11 +4,6 @@
     height: auto;
 }
 
-.navbar{
-    width: 100%;
-    position: fixed;
-}
-
 .headline{
     font-weight: bold;
     font-size: 30px;

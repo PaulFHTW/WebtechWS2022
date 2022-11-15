@@ -9,10 +9,23 @@
     </head>
     <body>
     <?php include 'navigation/navbar.php'; ?>
+
     <?php if(isset($_SESSION["username"])){
             echo "Willkommen ".$_SESSION["username"];
         }
     ?>
+    <br>
+     
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Personen Anzahl
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">1</a>
+            <a class="dropdown-item" href="#">2</a>
+            <a class="dropdown-item" href="#">3</a>
+        </div>
+    </div>
 
 
 
