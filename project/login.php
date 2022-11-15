@@ -47,6 +47,7 @@
             return $data;
         }
     ?>
+    
     <div class="user-form">
         <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>" method="post">
             <p>Log In</p>
@@ -54,11 +55,12 @@
             <input type="text" id="username" name="username"><br>
             <label for="password">Passwort: </label><br>
             <input type="password" id="password" name="password"><br><br>
-            <label for="checkbox1">Eingeloggt bleiben</label>
-            <input type="checkbox" id="checkbox1" name="checkbox1" value="eingeloggt bleiben"><br><br>
+            <input type="checkbox" id="checkbox1" name="checkbox1" value="eingeloggt bleiben">
+            <label for="checkbox1">Eingeloggt bleiben</label><br><br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -27,16 +27,17 @@ input{
     border-radius: 5px;
 }
 
-.primary-btn{
-    background-color: lightgrey;
-    padding: 5px;
-    border-radius: 5px;
-}
-
 .user-form{
     text-align: center;
 }
 
+.room-form{
+    text-align: center;
+}
 p{
     margin-left: 0px;
+}
+
+.greeting{
+    text-align: center;
 }
