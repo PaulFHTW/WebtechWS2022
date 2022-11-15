@@ -14,17 +14,21 @@
         $username = $email = $password =  "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["username"])) {
-            $usernameErr = "Username is required";
-        } else {
-            $username = test_input($_POST["username"]);
-        }
+            if (empty($_POST["username"])) {
+                $usernameErr = "Username is required";
+            } else {
+                $username = test_input($_POST["username"]);
+            }
 
-        if (empty($_POST["password"])) {
-            $passwordErr = "Password is required";
-        } else {
-            $password = test_input($_POST["password"]);
-        }
+            if (empty($_POST["password"])) {
+                $passwordErr = "Password is required";
+            } else {
+                $password = test_input($_POST["password"]);
+            }
+            if($_POST["password"]=="password"){
+                $_SESSION["username"] = $_POST["username"];
+                echo "Logged in as ". $_POST["username"];
+            }
         }
 
         function test_input($data){
