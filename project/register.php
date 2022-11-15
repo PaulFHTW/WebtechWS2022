@@ -8,28 +8,50 @@
         <link rel="stylesheet" type="text/css" href="style/login.css" />
     </head>
     <body> 
+    <?php include "navigation/navbar.php"; ?>
     <?php
         // define variables and set to empty values
-        $usernameErr = $emailErr = $passwordErr = "";
-        $username = $email = $password =  "";
+        $usernameErr = $emailErr = $passwordErr = $confpasswordErr = "";
+        $username = $email = $password =  $confpassword = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (empty($_POST["username"])) {
-                $usernameErr = "Username is required";
+                $usernameErr = "Username is required";?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $usernameErr;?>
+                    </div>
+            <?php
             } else {
                 $username = test_input($_POST["username"]);
             }
 
             if (empty($_POST["email"])) {
-                $emailErr = "Email is required";
+                $emailErr = "Email is required";?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $emailErr;?>
+                </div>
+            <?php    
             } else {
                 $email = test_input($_POST["email"]);
             }
 
             if (empty($_POST["password"])) {
-                $passwordErr = "Password is required";
+                $passwordErr = "Password is required";?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $passwordErr;?>
+                </div>
+            <?php    
             } else {
                 $password = test_input($_POST["password"]);
+            }
+            if($_POST["password"] != $_POST["confirmpassword"]){
+                $confpasswordErr = "Passwords do not match";?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $confpasswordErr;?>
+                </div>
+            <?php   
+            }else{
+                $confpassword = test_input($_POST["confpassword"]);
             }
         }
 
@@ -40,12 +62,6 @@
             return $data; 
         }
     ?>
-    <?php include "navigation/navbar.php"; ?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo $usernameErr;?><br>
-        <?php echo $emailErr;?><br>
-        <?php echo $passwordErr;?>
-    </div>
     <div class="user-form">
         <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>" method="post">
             <p>Register</p>

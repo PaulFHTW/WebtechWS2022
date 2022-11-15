@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="style/login.css"/>
     </head>
     <body>
+    <?php include 'navigation/navbar.php'; ?>
     <?php
         // define variables and set to empty values
         $person = $roomtype = "";
@@ -24,33 +25,34 @@
             return $data;
         }
     ?>
-    <?php include 'navigation/navbar.php'; ?>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img class="d-block w-100" src="images/room1.jpg" height="800" alt="First slide">
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="images/room2.jpg" height="800"  alt="Second slide">
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="images/room3.jpg" height="800" alt="Third slide">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="images/room1.jpg" class="d-block w-100" alt="First" height="800">
+        </div>
+        <div class="carousel-item">
+        <img src="images/room2.jpg" class="d-block w-100" alt="Second" height="800">
+        </div>
+        <div class="carousel-item">
+        <img src="images/room3.jpg" class="d-block w-100" alt="Third" height="800">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+        
     <h4 style="text-align: center;">Zimmer Reservierung</h4>
     <?php if(isset($_SESSION["username"])){
             echo "Willkommen ".$_SESSION["username"];

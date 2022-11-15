@@ -5,6 +5,7 @@ body{
 
 form{
     margin-top: 150px;
+    margin-bottom: 150px;
     border-style: solid;
     border-color: lightgray;
     border-radius: 15px;

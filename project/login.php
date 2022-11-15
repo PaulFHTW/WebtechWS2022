@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="style/login.css" />
     </head>
     <body>
+    <?php include 'navigation/navbar.php'; ?>
     <?php
         // define variables and set to empty values
         $usernameErr = $emailErr = $passwordErr = "";
@@ -15,13 +16,21 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (empty($_POST["username"])) {
-                $usernameErr = "Username is required";
+                $usernameErr = "Username is required";?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $usernameErr;?>
+                </div>
+            <?php
             } else {
                 $username = test_input($_POST["username"]);
             }
 
             if (empty($_POST["password"])) {
-                $passwordErr = "Password is required";
+                $passwordErr = "Password is required";?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $passwordErr;?>
+                </div>
+            <?php
             } else {
                 $password = test_input($_POST["password"]);
             }
@@ -38,11 +47,6 @@
             return $data;
         }
     ?>
-    <?php include 'navigation/navbar.php'; ?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo $usernameErr;?><br>
-        <?php echo $passwordErr;?>
-    </div>
     <div class="user-form">
         <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>" method="post">
             <p>Log In</p>
