@@ -4,7 +4,10 @@
     <body>
     <nav class="navbar bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Habbo Hotel</a>
+            <a class="navbar-brand" href="index.php">
+            <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                Habbo Hotel
+            </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="expand" data-bs-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
