@@ -7,9 +7,40 @@
         <link rel="stylesheet" type="text/css" href="style/login.css" />
     </head>
     <body>
+    <?php
+        // define variables and set to empty values
+        $usernameErr = $emailErr = $passwordErr = "";
+        $username = $email = $password =  "";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["username"])) {
+            $usernameErr = "Username is required";
+        } else {
+            $username = test_input($_POST["username"]);
+        }
+
+        if (empty($_POST["password"])) {
+            $passwordErr = "Password is required";
+        } else {
+            $password = test_input($_POST["password"]);
+        }
+        }
+
+        function test_input($data){
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            echo "Logged in!";
+            return $data;
+        }
+    ?>
     <?php include 'navigation/navbar.php'; ?>
+    <div style="text-align:center; color:red;" class="error">
+        <?php echo $usernameErr;?><br>
+        <?php echo $passwordErr;?>
+    </div>
     <div class="user-form">
-        <form action="validation/login-validation.php" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>" method="post">
             <p>Log In</p>
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username"><br>
