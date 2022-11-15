@@ -34,13 +34,19 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <img src="images/room1.jpg" class="d-block w-100" alt="First" height="800">
+            <div class="container-fluid">
+                <img src="images/room1.jpg" class="d-block w-100" alt="First" height="800">
+            </div>
         </div>
         <div class="carousel-item">
-        <img src="images/room2.jpg" class="d-block w-100" alt="Second" height="800">
+            <div class="container-fluid">
+                <img src="images/room2.jpg" class="d-block w-100" alt="Second" height="800">
+            </div>
         </div>
         <div class="carousel-item">
-        <img src="images/room3.jpg" class="d-block w-100" alt="Third" height="800">
+            <div class="container-fluid">
+                <img src="images/room3.jpg" class="d-block w-100" alt="Third" height="800">
+            </div>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
