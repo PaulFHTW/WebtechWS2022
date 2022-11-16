@@ -10,7 +10,7 @@
     <body>
     <?php include 'navigation/navbar.php'; ?>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div id="carouselExampleIndicators" class="carousel slide 800-px-height" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -18,19 +18,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class="container-fluid">
-                <img src="images/room1.jpg" class="d-block w-100" alt="First" height="800">
-            </div>
+            <img src="images/room1.jpg" class="d-block w-100" alt="First">
         </div>
         <div class="carousel-item">
-            <div class="container-fluid">
-                <img src="images/room2.jpg" class="d-block w-100" alt="Second" height="800">
-            </div>
+            <img src="images/room2.jpg" class="d-block w-100" alt="Second">
         </div>
         <div class="carousel-item">
-            <div class="container-fluid">
-                <img src="images/room3.jpg" class="d-block w-100" alt="Third" height="800">
-            </div>
+            <img src="images/room3.jpg" class="d-block w-100" alt="Third">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -92,7 +86,7 @@
     ?>
 
         
-    <br><h4 style="text-align: center;">Zimmer Reservierung</h4>
+    <h4 style="text-align: center;">Zimmer Reservierung</h4>
 
     <div class="greeting">
         <?php if(isset($_SESSION["username"])){
