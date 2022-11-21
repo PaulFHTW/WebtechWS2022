@@ -1,11 +1,5 @@
+<?php session_start();?>
 <!DOCTYPE html>
-<?php session_start(); 
-    if($_SESSION["username"]==="admin"){
-        
-    }else{
-        header("Location: login.php");
-    }
-?>
 <html lang="de">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +10,15 @@
 <body>
     <?php include 'navigation/navbar.php'?>
 <div class="room-form">
-    <form action="<?php $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">
+    <form action="admin.php" method="post" enctype="multipart/form-data">
     <p>Select image to upload:</p><br>
     <input type="file" name="file" id="file">
     <button type="submit" class="btn btn-primary" name="submit">Upload</button>
     </form>
 </div>
-
-</body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</html>
-
-    <?php
+<?php  
         if(isset($_POST["submit"])){
-            var_dump($_FILES);
+            //var_dump($_FILES);
             $file = $_FILES["file"];
             $fileName = $_FILES["file"]["name"];
             $fileTmpName = $_FILES["file"]["tmp_name"];
@@ -45,9 +34,9 @@
             if(in_array($fileActualExt, $allowed)){
                 if($fileError === 0){
                     if($fileSize < 15000000){
-                        $fileNameNew = uniqid('', true).".".$fileActualExt;
-                        $fileDestination = "uploads/".$fileNameNew;
-                        move_uploaded_file($fileTmpName, $$fileDestination);
+                        $fileNameNew = "pic1".".".$fileActualExt;
+                        $fileDestination = "uploads/". $fileNameNew;
+                        move_uploaded_file($fileTmpName, $fileDestination);
                         echo '<span style=color:green>File uploaded successfully</span>';
                     }else{
                         echo '<span style=color:red>File size too big</span>';
@@ -60,3 +49,7 @@
             }
         }
     ?>
+    <img src="uploads/pic1.jpg" alt="pic" width="720" height="480" class="img">
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</html>
