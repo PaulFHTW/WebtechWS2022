@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <?php session_start(); ?>
 <html lang="de">
@@ -41,7 +40,7 @@
                 if($fileError === 0){
                     if($fileSize < 15000000){
                         $fileNameNew = uniqid('', true).".".$fileActualExt;
-                        $fileDestination = '../uploads/'.$fileNameNew;
+                        $fileDestination = 'uploads/'.$fileNameNew;
                         move_uploaded_file($fileTmpName, $$fileDestination);
                         echo '<span style=color:green>File uploaded successfully</span>';
                     }else{
