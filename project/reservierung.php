@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php session_start();   
+    if($_SESSION["username"]==="paul"){
+        
+    }else{
+        header("Location: login.php");
+    } ?>
 <hmtl lang="de">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

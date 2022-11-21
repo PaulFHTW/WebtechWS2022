@@ -34,7 +34,7 @@
             } else {
                 $password = test_input($_POST["password"]);
             }
-            if($_POST["password"]=="password"){
+            if($_POST["username"]== paul AND $_POST["password"]=="password"){
                 $_SESSION["username"] = $_POST["username"];
                 header("Location: reservierung.php");
             }
