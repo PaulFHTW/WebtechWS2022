@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<html lang="de">
-    <body>
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
@@ -32,5 +28,3 @@
         </div>
         </div>
     </nav>
-    </body>  
-</hmtl>

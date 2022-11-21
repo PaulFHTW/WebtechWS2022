@@ -38,6 +38,10 @@
                 $_SESSION["username"] = $_POST["username"];
                 header("Location: reservierung.php");
             }
+            if($_POST["username"]==="admin" AND $_POST["password"]==="admin"){
+                $_SESSION["username"] = $_POST["username"];
+                header("Location: admin.php");
+            }
         }
 
         function test_input($data){

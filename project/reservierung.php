@@ -53,7 +53,7 @@
                 $person = test_input($_POST["person"]);
             }?>
             <?php
-            if($_POST["nights"] == "Nächte"){
+            if(empty($_POST["ankunft"])){
                 $nightsErr = "Anzahl der Nächte zu gering";?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $nightsErr;?>
@@ -75,7 +75,7 @@
     $successMsg = "";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        if($_POST["person"] != "Personen Anzahl" && $_POST["nights"] != "Nächte"){
+        if($_POST["person"] != "Personen Anzahl" && $_POST["ankunft"] != ""){
             $successMsg = "Buchung erfolgreich";?>
             <div class="alert alert-success" role="alert">
                 <?php echo $successMsg;?>
@@ -105,15 +105,10 @@
             <option value="4">4</option>
         </select>
 
-        <select class="form-select form-select-md" aria-label=".form-select-sm example" name="nights">
-            <option selected>Nächte</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select><br>
+            <label for="ankufnt">Ankunft: </label><br>
+            <input type="text" id="ankunft" name="ankunft"><br>
+            <label for="abreise">Abreise: </label><br>
+            <input type="text" id="abreise" name="abreise"><br><br>
 
             <label for="haustiere">Haustiere : </label><br>
             <input type="checkbox" id="ja" name="ja" value="ja">
