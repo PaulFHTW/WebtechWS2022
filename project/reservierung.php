@@ -1,10 +1,4 @@
-<?php session_start();   
-    if($_SESSION["username"]==="paul"){
-        
-    }else{
-        header("Location: login.php");
-    } 
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <hmtl lang="de">
     <head>

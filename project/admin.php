@@ -49,7 +49,7 @@
             }
         }
     ?>
-    <img src="uploads/pic1.jpg" alt="pic" width="720" height="480" class="img">
+    <img src="uploads/pic1.jpg" alt="pic" width="720" height="480">
 </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
