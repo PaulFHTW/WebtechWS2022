@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();?>
+<?php include_once 'dbaccess.php';?>
 <html lang="de">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,11 +35,11 @@
             } else {
                 $password = test_input($_POST["password"]);
             }
-            if($_POST["username"]== "Paul" AND $_POST["password"]=="password"){
+            if($username== "Paul" && $password=="password"){
                 $_SESSION["username"] = $_POST["username"];
                 header("Location: reservierung.php");
             }
-            if($_POST["username"]==="admin" AND $_POST["password"]==="admin"){
+            if($username==="admin" && $password==="admin"){
                 $_SESSION["username"] = $_POST["username"];
                 header("Location: admin.php");
             }

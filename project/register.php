@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php session_start();?> 
+<?php session_start();?>
 <html lang="de">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,61 +9,9 @@
     </head>
     <body> 
     <?php include "navigation/navbar.php"; ?>
-    <?php
-        // define variables and set to empty values
-        $usernameErr = $emailErr = $passwordErr = $confpasswordErr = "";
-        $username = $email = $password =  $confpassword = "";
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (empty($_POST["username"])) {
-                $usernameErr = "Username is required";?>
-                    <div class="alert alert-danger" role="alert">
-                        <?php echo $usernameErr;?>
-                    </div>
-            <?php
-            } else {
-                $username = test_input($_POST["username"]);
-            }
-
-            if (empty($_POST["email"])) {
-                $emailErr = "Email is required";?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $emailErr;?>
-                </div>
-            <?php    
-            } else {
-                $email = test_input($_POST["email"]);
-            }
-
-            if (empty($_POST["password"])) {
-                $passwordErr = "Password is required";?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $passwordErr;?>
-                </div>
-            <?php    
-            } else {
-                $password = test_input($_POST["password"]);
-            }
-            if($_POST["password"] != $_POST["confirmpassword"]){
-                $confpasswordErr = "Passwords do not match";?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $confpasswordErr;?>
-                </div>
-            <?php   
-            }else{
-                $confpassword = test_input($_POST["confpassword"]);
-            }
-        }
-
-        function test_input($data){
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data; 
-        }
-    ?>
     <div class="user-form">
-        <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>" method="post">
+        <form action="createuser.php" method="post">
             <p>Register</p>
             <label for="email">E-Mail: </label><br>
             <input type="email" id="email" name="email"><br>
@@ -76,6 +24,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </html>
