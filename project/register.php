@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();?>
+<?php include_once 'dbaccess.php';?>
 <html lang="de">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,107 @@
     </head>
     <body> 
     <?php include "navigation/navbar.php"; ?>
+<?php 
+    $usernameErr = false; $emailErr = false; $passwordErr = false; $confpasswordErr = false; $showAlert = false; $exists = false;
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password =  $_POST['password'];
+        $confpassword = $_POST['confirmpassword'];
+
+        if (empty($username)) {
+            $usernameErr = "Username is required";
+        } else {
+            $username = test_input($_POST["username"]);
+        }
+
+        if (empty($email)) {
+            $emailErr = "Email is required";  
+        } else {
+            $email = test_input($_POST["email"]);
+        }
+
+        if (empty($password)) {
+            $passwordErr = "Password is required";   
+        } else {
+            $password = test_input($_POST["password"]);
+        }
+
+        if($password != $confpassword){
+            $confpasswordErr = "Passwords do not match";  
+        }else{
+            $confpassword = test_input($_POST["confirmpassword"]);
+        }
+
+
+        $sql = "SELECT * FROM user WHERE username = '$username';";
+
+        $result = mysqli_query($conn, $sql);
+    
+        $num = mysqli_num_rows($result);
+    
+        if($usernameErr == false && $emailErr == false && $passwordErr == false && $confpasswordErr == false){
+            if($num == 0){
+                $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password');";
+        
+                $result = mysqli_query($conn, $sql);
+        
+                if($result){
+                    $showAlert = true;
+                }
+                else{
+                    $showError = true;
+                }    
+            }
+            if($num > 0){
+                $exists = "Username not available";
+            }
+        }
+    }
+
+    function test_input($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data; 
+    }
+
+    if($showAlert){
+        echo '<div class="alert alert-success alert-dismissable fade show" role="alert">
+        <strong>Success!</strong> Your account was created and you can now login.
+        </div>';
+    }
+
+    if($usernameErr){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '. $usernameErr .'
+        </div>';
+    }
+    if($emailErr){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '. $emailErr .'
+        </div>';
+    }
+    if($passwordErr){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '.$passwordErr.'
+        </div>';
+    }
+    if($confpasswordErr){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '.$confpasswordErr.'
+        </div>';
+    }
+    if($exists){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '. $exists.'
+        </div>';
+    }
+
+?>
     <div class="user-form">
-        <form action="createuser.php" method="post">
+        <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
             <p>Register</p>
             <label for="email">E-Mail: </label><br>
             <input type="email" id="email" name="email"><br>

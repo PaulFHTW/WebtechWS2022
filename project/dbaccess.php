@@ -7,4 +7,4 @@
 
     $conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
 
-    
+?>

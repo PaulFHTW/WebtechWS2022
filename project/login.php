@@ -10,51 +10,72 @@
     </head>
     <body>
     <?php include 'navigation/navbar.php'; ?>
-    <?php
-        // define variables and set to empty values
-        $usernameErr = $emailErr = $passwordErr = "";
-        $username = $email = $password =  "";
+<?php
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (empty($_POST["username"])) {
-                $usernameErr = "Username is required";?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $usernameErr;?>
-                </div>
-            <?php
-            } else {
-                $username = test_input($_POST["username"]);
-            }
+    $usernameErr = false; $passwordErr = false; $exists = false;
 
-            if (empty($_POST["password"])) {
-                $passwordErr = "Password is required";?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $passwordErr;?>
-                </div>
-            <?php
-            } else {
-                $password = test_input($_POST["password"]);
-            }
-            if($username== "Paul" && $password=="password"){
-                $_SESSION["username"] = $_POST["username"];
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        if(empty($username)){
+            $usernameErr = "Username required";
+        }
+        else{
+            $username = test_input($username);
+        }
+        
+        if(empty($password)){
+            $passwordErr = "Password required";
+        }
+        else{
+            $password = test_input($password);
+        }
+
+        if($usernameErr == false && $passwordErr == false){
+            $sql = "SELECT username, password FROM user WHERE username = '$username' AND password = '$password';";
+
+            $result = mysqli_query($conn, $sql);
+
+            $num = mysqli_num_rows($result);
+
+            if($num > 0){
                 header("Location: reservierung.php");
             }
-            if($username==="admin" && $password==="admin"){
-                $_SESSION["username"] = $_POST["username"];
-                header("Location: admin.php");
-            }
-        }
 
-        function test_input($data){
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
+            if($num == 0){
+                $exists = "Incorrect Username or Password";
+            }
+
         }
-    ?>
+    }
+    
+    function test_input($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data; 
+    }
+
+    if($usernameErr){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '. $usernameErr.'
+        </div>';
+    }
+    if($passwordErr){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '. $passwordErr.'
+        </div>';
+    }
+    if($exists){
+        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong>Error!</strong> '. $exists.'
+        </div>';
+    }
+?>
     
     <div class="user-form">
-        <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>" method="post">
+        <form action="<?php $_SERVER["PHP_SELF"];?>" method="post">
             <p>Log In</p>
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username"><br>
