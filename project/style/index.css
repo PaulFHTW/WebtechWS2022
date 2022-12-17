@@ -34,6 +34,7 @@ p{
 }
 
 .col-12{
+    background-color: whitesmoke;
     display: inline-block;
     border: solid;
     border-color: lightgrey;
