@@ -25,10 +25,10 @@
         </p>
         <div class="container">
             <div class="row justify-content-start">
-                <div class="col-11">
+                <div class="col-12">
                     <h4 class="news">News</h4>
                     <br>
-                    <img src="uploads/300px-Poolsclosed.jpg" alt="picture" class="img-thumbnail rounded mx-auto float-end">
+                        <img src="uploads/300px-Poolsclosed.jpg" class="rounded float-end" alt="picture">
                         <li class="desc">Wetter auf den Karibischen Inseln unglaublich gut</li>
                         <li class="desc">Pool geschlossen</li>
                         <li class="desc">Keine Kinder erlaubt</li>
@@ -39,7 +39,7 @@
                 
         <div class="container">
             <div class="row justify-content-start">
-                <div class="col-5">
+                <div class="col-6">
                 <img src="images/room1.jpg" class="room-img">
                     <p class="room-desc">Dreamer Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
@@ -50,7 +50,7 @@
                     </div>
                     <br>
                 </div>
-                <div class="col-5">
+                <div class="col-6">
                 <img src="images/room2.jpg" class="room-img"> 
                     <p class="room-desc">Sunshine Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>

@@ -25,17 +25,15 @@ p{
     padding-bottom: 25px;
 }
 
-.col-5{
+.col-6{
     border: solid;
     border-color: lightgrey;
     border-style: outset;
     border-radius: 15px;
     padding: 10px;
-    margin: 15px;
-    margin-left: 55px;
 }
 
-.col-11{
+.col-12{
     display: inline-block;
     border: solid;
     border-color: lightgrey;
@@ -44,7 +42,6 @@ p{
     padding: 10px; 
     margin-bottom: 15px;
     margin-top: 15px;
-    margin-left: 36px;
 }
 
 .desc{
@@ -65,12 +62,4 @@ p{
 .col-4{
     margin-top: 15px;
     padding: 15px;
-}
-
-.adminpic{
-    display: inline-block;
-}
-
-.img-thumbnail{
-    padding-top: 0px;
 }
