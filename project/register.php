@@ -11,13 +11,35 @@
     <body> 
     <?php include "navigation/navbar.php"; ?>
 <?php 
+    $anredeErr = false; $vornameErr = false; $nachnameErr = false;
     $usernameErr = false; $emailErr = false; $passwordErr = false; $confpasswordErr = false; $showAlert = false; $exists = false;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $anrede = $_POST['anrede'];
+        $vorname = $_POST['vorname'];
+        $nachname = $_POST['nachname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password =  $_POST['password'];
         $confpassword = $_POST['confirmpassword'];
+
+        if (empty($anrede)) {
+            $anredeErr = "Anrede is required";
+        } else {
+            $anrede = test_input($_POST["username"]);
+        }
+
+        if (empty($vorname)) {
+            $vornameErr = "Vorname is required";
+        } else {
+            $vorname = test_input($_POST["username"]);
+        }
+
+        if (empty($nachname)) {
+            $nachnameErr = "Nachname is required";
+        } else {
+            $nachname = test_input($_POST["username"]);
+        }
 
         if (empty($username)) {
             $usernameErr = "Username is required";
@@ -50,9 +72,9 @@
     
         $num = mysqli_num_rows($result);
     
-        if($usernameErr == false && $emailErr == false && $passwordErr == false && $confpasswordErr == false){
+        if($anredeErr == false && $vornameErr == false && $nachnameErr == false && $usernameErr == false && $emailErr == false && $passwordErr == false && $confpasswordErr == false){
             if($num == 0){
-                $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password');";
+                $sql = "INSERT INTO user (anrede, vorname, nachname, username, email, password) VALUES ('$anrede', '$vorname', '$nachname', '$username', '$email', '$password');";
         
                 $result = mysqli_query($conn, $sql);
         
@@ -77,41 +99,74 @@
     }
 
     if($showAlert){
-        echo '<div class="alert alert-success alert-dismissable fade show" role="alert">
-        <strong>Success!</strong> Your account was created and you can now login.
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong>Your Account was created and you can now log in
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+
+    if($anredeErr){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $anredeErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+
+    if($vornameErr){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $vornameErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+
+    if($nachnameErr){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $nachnameErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
 
     if($usernameErr){
-        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
-        <strong>Error!</strong> '. $usernameErr .'
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $usernameErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
     if($emailErr){
-        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
-        <strong>Error!</strong> '. $emailErr .'
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $emailErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
     if($passwordErr){
-        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
-        <strong>Error!</strong> '.$passwordErr.'
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $passwordErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
     if($confpasswordErr){
-        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
-        <strong>Error!</strong> '.$confpasswordErr.'
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $confpasswordErrErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
     if($exists){
-        echo '<div class="alert alert-danger alert-dismissable fade show" role="alert">
-        <strong>Error!</strong> '. $exists.'
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $exists .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
 
 ?>
     <div class="user-form">
         <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
-            <p>Register</p>
+            <p>Registrierung</p>
+            <label for="anrede">Anrede: </label><br>
+            <input type="text" id="anrede" name="anrede"><br>
+            <label for="vorname">Vorname: </label><br>
+            <input type="text" id="vorname" name="vorname"><br>
+            <label for="nachname">Nachname: </label><br>
+            <input type="text" id="nachname" name="nachname"><br>
             <label for="email">E-Mail: </label><br>
             <input type="email" id="email" name="email"><br>
             <label for="username">Username: </label><br>

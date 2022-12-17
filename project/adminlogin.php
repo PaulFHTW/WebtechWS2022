@@ -33,14 +33,14 @@
         }
 
         if($usernameErr == false && $passwordErr == false){
-            $sql = "SELECT username, password FROM user WHERE username = '$username' AND password = '$password';";
+            $sql = "SELECT username, password FROM admin WHERE username = '$username' AND password = '$password';";
 
             $result = mysqli_query($conn, $sql);
 
             $num = mysqli_num_rows($result);
 
             if($num > 0){
-                header("Location: reservierung.php");
+                header("Location: news.php");
             }
 
             if($num == 0){
@@ -69,23 +69,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
-    if($exists){
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $exists .' 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
-    }
 ?>
     
     <div class="user-form">
         <form action="<?php $_SERVER["PHP_SELF"];?>" method="post">
-            <p>Log In</p>
+            <p>Admin Login</p>
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username"><br>
             <label for="password">Passwort: </label><br>
             <input type="password" id="password" name="password"><br><br>
-            <input type="checkbox" id="checkbox1" name="checkbox1" value="eingeloggt bleiben">
-            <label for="checkbox1">Eingeloggt bleiben</label><br><br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
