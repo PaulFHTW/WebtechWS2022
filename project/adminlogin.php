@@ -33,13 +33,14 @@
         }
 
         if($usernameErr == false && $passwordErr == false){
-            $sql = "SELECT username, password FROM admin WHERE username = '$username' AND password = '$password';";
+            $sql = "SELECT username, password FROM administrator WHERE username = '$username' AND password = '$password';";
 
             $result = mysqli_query($conn, $sql);
 
             $num = mysqli_num_rows($result);
 
             if($num > 0){
+                $_SESSION['admin'] = "admin";
                 header("Location: news.php");
             }
 
@@ -66,6 +67,12 @@
     if($passwordErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> '. $passwordErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+    if($exists){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $exists .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }

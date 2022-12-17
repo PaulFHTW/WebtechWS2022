@@ -1,3 +1,4 @@
+<?php session_start(); ?>
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
@@ -21,9 +22,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="impressum.php">Impressum</a>
             </li>
+            <?php if(isset($_SESSION["username"]) || isset($_SESSION["admin"])){?>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
             </li>
+            <?php }?>
         </ul>
         </div>
         </div>

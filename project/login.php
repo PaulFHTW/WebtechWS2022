@@ -40,6 +40,7 @@
             $num = mysqli_num_rows($result);
 
             if($num > 0){
+                $_SESSION['username'] = $username;
                 header("Location: reservierung.php");
             }
 

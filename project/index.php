@@ -9,16 +9,55 @@
     </head>
     <body>
     <?php include 'navigation/navbar.php'; ?>
+    <div class="background">
         <div class="container-fluid">
             <img src="images/hotel.jpg" class="background-img" alt="beach-resort">
-        </div><br>
+        </div>
+    </div>
+    <br>
         <p class="headline">Planen Sie Ihren Traumurlaub</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. In nulla posuere sollicitudin aliquam.<br>
-            Tincidunt tortor aliquam nulla facilisi. Ut etiam sit amet nisl purus in mollis nunc. Libero id faucibus nisl tincidunt.<br>
-            Quis viverra nibh cras pulvinar mattis nunc sed blandit libero. Mauris ultrices eros in cursus turpis.
-            Nullam ac tortor vitae purus. Bibendum ut tristique et egestas.
-        </p>    
-        
+        <p>
+        Moderne und luxuriös ausgestattete Zimmer und Suites mit geräumigen Balkonen.<br>
+        Das Luxury Habbo Hotel verfügt über insgesamt 41 Zimmer, 3 Familienzimmer und 5 Suites. <br>
+        Wählen Sie ein Zimmer oder eine Suite nach Ihrem Maß. <br>
+        Gemütliche King Size Betten garantieren einen einzigartigen Urlaub. <br>
+        Genießen Sie den wunderschönen Sonnenuntergang oder das abendliche Murmeln vom Balkon des eigenen Zimmers aus. <br>
+        </p>
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-12">
+                    <h4 class="news">News</h4>
+                    <br>
+                        <li>Zimmer</li>
+                        <li>Immer</li>
+                        <li>Schlimmer</li>
+                    <br>
+                </div>
+            </div>
+        </div>
+                
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-6">
+                <img src="images/room1.jpg" class="room-img">
+                    <li>Zimmer</li>
+                    <li>Immer</li>
+                    <li>Schlimmer</li>
+                    <br>
+                </div>
+                <div class="col-6">
+                <img src="images/room2.jpg" class="room-img"> 
+                    <li>Zimmer</li>
+                    <li>Immer</li>
+                    <li>Schlimmer</li>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+ 
+                
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>

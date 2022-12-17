@@ -1,16 +1,51 @@
 .background-img{
-    margin-left: -12px;
-    width: 106%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
     height: auto;
 }
-
+.background{
+    background-color: whitesmoke;
+    border-top: solid;
+    border-color: lightgrey;
+}
 .headline{
     font-weight: bold;
     font-size: 30px;
-    text-align: center;
 }
 
 p{
-    margin-left: 15px;
+    margin-left: 35px;
     margin-right: 15px;
+}
+
+.room-img{
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.col-6{
+    border: solid;
+    border-color: lightgrey;
+    border-style: outset;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.col-12{
+    border: solid;
+    border-color: lightgrey;
+    border-style: outset;
+    border-radius: 15px;
+    padding: 10px; 
+    margin-bottom: 15px;
+}
+
+li{
+    margin-left: 25px;
+}
+
+.news{
+    padding: 15px;
 }
