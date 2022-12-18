@@ -14,6 +14,13 @@
 <?php
     $personErr = false; $suiteErr = false; $ankunftErr = false; $abreiseErr = false; $roomErr = false;
 
+    //Get User ID 
+    $username = $_SESSION['username'];
+    $var1 = "SELECT UID FROM user WHERE username='$username';";
+    $var2 = mysqli_query($conn, $var1);
+    $row = mysqli_fetch_assoc($var2);
+    $UID = $row['UID'];
+
     $person = $_POST['person'];
     $suite = $_POST['suite'];
     $ankunft = $_POST['ankunft'];
@@ -36,6 +43,7 @@
         $abreiseErr = "Bitte suchen Sie ein Abreisedatum aus";
     }
 
+    //Check if Suite is already booked on the arrival day
     $sql = "SELECT ankunft, suite FROM reservierung WHERE ankunft='$ankunft' AND suite='$suite';";
 
     $result = mysqli_query($conn, $sql);
@@ -44,7 +52,7 @@
 
     if($personErr == false && $suiteErr == false && $ankunftErr == false && $abreiseErr == false){
         if($num == 0){
-        $sql = "INSERT INTO reservierung (personen, suite, ankunft, abreise, status) VALUES ('$person', '$suite', '$ankunft', '$abreise', '$status');";
+        $sql = "INSERT INTO reservierung (personen, suite, ankunft, abreise, status, FK_UID) VALUES ('$person', '$suite', '$ankunft', '$abreise', '$status', '$UID');";
 
         $result = mysqli_query($conn, $sql);
 

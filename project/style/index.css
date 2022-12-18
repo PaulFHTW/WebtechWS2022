@@ -5,11 +5,7 @@
     width: 75%;
     height: auto;
 }
-.background{
-    background-color: whitesmoke;
-    border-top: solid;
-    border-color: lightgrey;
-}
+
 .headline{
     font-weight: bold;
     font-size: 30px;
@@ -25,21 +21,19 @@ p{
     padding-bottom: 25px;
 }
 
-.col-md-6{
+.col-lg-6{
     border: solid;
     border-color: lightgrey;
     border-style: outset;
-    border-radius: 15px;
     padding: 10px;
 }
 
-.col-md-12{
+.col-lg-12{
     background-color: whitesmoke;
     display: inline-block;
     border: solid;
     border-color: lightgrey;
     border-style: outset;
-    border-radius: 15px;
     padding: 10px; 
     margin-bottom: 15px;
     margin-top: 15px;
