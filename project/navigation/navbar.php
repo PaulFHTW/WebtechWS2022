@@ -15,12 +15,12 @@
                 <a class="nav-link" href="login.php">Login</a>
             </li>
             <?php }?>
-            <?php if(isset($_SESSION['username'])){?>
+            <?php if(isset($_SESSION['username']) && !isset($_SESSION['admin'])){?>
                 <li class="nav-item">
                     <a class="nav-link" href="reservierung.php">Reservierung</a>
                 </li> 
             <?php }?>
-            <?php if(isset($_SESSION['username'])){?>
+            <?php if(isset($_SESSION['username']) && !isset($_SESSION['admin'])){?>
                 <li class="nav-item">
                     <a class="nav-link" href="profil.php">Profil</a>
                 </li> 

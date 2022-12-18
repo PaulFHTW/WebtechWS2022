@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">        
-        <link rel="stylesheet" type="text/css" href="style/room.css" />
+        <link rel="stylesheet" type="text/css" href="style/news.css" />
     </head>
 <body>
     <?php include 'navigation/navbar.php'?>
@@ -99,16 +99,22 @@
             </div>';
         }
 ?>
-
-    <div class="room-form">
-        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-        <p>Important messages only:</p>
-        <textarea id="news" name="news" rows="8" cols="50"></textarea><br><br>
-        <p>Select image to upload:</p><br>
-        <input type="file" name="file" id="file">
-        <button type="submit" class="btn btn-primary" name="submit">Upload</button>
-        </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <div class="news-form">
+                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+                <p>Important messages only:</p>
+                <textarea id="news" name="news" rows="8" cols="50"></textarea><br><br>
+                <p>Select image to upload:</p><br>
+                <input type="file" name="file" id="file">
+                <button type="submit" class="btn btn-primary" name="submit">Upload</button>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
+
 </body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
