@@ -10,6 +10,7 @@
     </head>
     <body>
     <?php include 'navigation/navbar.php'; ?><br><br>
+    <p class="headline">Zimmer Reservierung</p>
 <?php
     $personErr = false; $suiteErr = false; $ankunftErr = false; $abreiseErr = false; $roomErr = false;
 
@@ -98,10 +99,11 @@
         </div>';
     }
 ?>
+
     <div class="container">
         <div class="row justify-content-start">
 
-                <div class="col-sm-4">
+                <div class="col-lg-4">
                 <img src="images/room1.jpg" class="room-img">
                     <p class="room-desc">Dreamer Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
@@ -109,7 +111,7 @@
                     <li class="desc">direkter Blick aufs Meer</li>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-lg-4">
                 <img src="images/room2.jpg" class="room-img"> 
                     <p class="room-desc">Sunshine Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
@@ -120,10 +122,9 @@
 
 
 
-<div class="col-sm-4">
+<div class="col-lg-4">
     <div class="room-form">
         <form action="<?php $_SERVER[" PHP_SELF "];?>" method="post">
-        <p>Zimmer Reservierung</p>
         <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="person">
             <option selected>Personen Anzahl</option>
             <option value="1">1</option>

@@ -1,9 +1,4 @@
 form{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-color: lightgray;
-    border-radius: 15px;
-    padding: 40px;
     display: inline-block;
     text-align: left;
 }
@@ -33,22 +28,25 @@ p{
     padding-right: 75px;
 }
 
-.col-sm-4{
-    background-color: whitesmoke;
-    border: solid;
-    border-color: lightgrey;
-    border-style: outset;
-    border-radius: 15px;
-    padding: 10px;
+.col-lg-4{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .room-img{
     width: 100%;
-    padding-top: 100px;
-    padding-bottom: 25px;
+    border: solid;
+    border-color: lightgrey;
+    border-style: outset;
 }
 
 .desc{
     margin-left: 25px;
     padding: 10px;
+}
+
+.headline{
+    font-size: 30px;
+    font-weight:bold;
+    text-align: center;
 }

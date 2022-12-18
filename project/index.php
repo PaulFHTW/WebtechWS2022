@@ -60,9 +60,13 @@
                     <li class="desc">Zimmergröße 38 - 40 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
                     <div class="d-grid gap-2 col-4 mx-auto">
-                        <a href="register.php">
+                    <?php if(isset($_SESSION['username'])){?>
+                    <a href="reservierung.php"><?php }
+                    else{ ?>
+                    <a href="register.php"><?php }?>
                             <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
                         </a>
+                    </a>
                     </div>
                     <br>
                 </div>
@@ -73,9 +77,13 @@
                     <li class="desc">Zimmergröße 36 - 42 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
                     <div class="d-grid gap-2 col-4 mx-auto">
-                        <a href="register.php">
+                    <?php if(isset($_SESSION['username'])){?>
+                    <a href="reservierung.php"><?php }
+                    else{ ?>
+                    <a href="register.php"><?php }?>
                             <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
                         </a>
+                    </a>
                     </div>
                     <br>
                 </div>
