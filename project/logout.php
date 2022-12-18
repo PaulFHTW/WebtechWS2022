@@ -10,7 +10,7 @@
 <body>
 <?php include 'navigation/navbar.php';?>
 <?php 
-    if(isset($_SESSION["username"])){
+    if(isset($_SESSION["username"]) || isset($_SESSION["admin"])){
         session_destroy();
         echo "Logged out!";
     }

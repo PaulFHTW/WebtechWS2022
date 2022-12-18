@@ -60,7 +60,9 @@
                     <li class="desc">Zimmergröße 38 - 40 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
                     <div class="d-grid gap-2 col-4 mx-auto">
-                        <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                        <a href="register.php">
+                            <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                        </a>
                     </div>
                     <br>
                 </div>
@@ -71,7 +73,9 @@
                     <li class="desc">Zimmergröße 36 - 42 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
                     <div class="d-grid gap-2 col-4 mx-auto">
-                        <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                        <a href="register.php">
+                            <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                        </a>
                     </div>
                     <br>
                 </div>
