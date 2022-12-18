@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style/index.css" />
     </head>
     <body>
-    <?php include 'navigation/navbar.php'; ?>
+    <?php include 'navigation/navbar.php'; ?><br><br>
 
         <p class="topic">Hilfe fuer Nutzer<p>
 

@@ -8,14 +8,13 @@
         <link rel="stylesheet" type="text/css" href="style/index.css" />
     </head>
 <body>
-<?php include 'navigation/navbar.php';?>
 <?php 
     if(isset($_SESSION["username"]) || isset($_SESSION["admin"])){
         session_destroy();
-        echo "Sie wurden abgemeldet!";
+        header("Location: index.php");
     }
     else{
-        echo "Sie sind nicht angemeldet!";
+        header("Location: index.php");
     }
 ?>
 </body>
