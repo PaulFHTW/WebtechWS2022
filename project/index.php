@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();?> 
+<?php include_once 'dbaccess.php'; ?>
 <html lang="de">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,10 +29,23 @@
                 <div class="col-12">
                     <h4 class="news">News</h4>
                     <br>
-                        <img src="uploads/300px-Poolsclosed.jpg" class="rounded float-end" alt="picture">
-                        <li class="desc">Wetter auf den Karibischen Inseln unglaublich gut</li>
-                        <li class="desc">Pool geschlossen</li>
-                        <li class="desc">Keine Kinder erlaubt</li>
+                    <img src="uploads/pic1.png" class="img-thumbnail rounded float-end" alt="picture">
+                    <?php
+                        $sql = "SELECT * FROM news;";
+
+                        $result = mysqli_query($conn, $sql);
+
+                        $num = mysqli_num_rows($result);
+
+                        if($num > 0){
+                            while($row = mysqli_fetch_assoc($result)){?>
+                            <li class="desc"><?php
+                                echo $row['text']."<br>";
+                            ?></li>
+                            <?php
+                            }
+                        }
+                    ?>
                     <br>
                 </div>
             </div>
@@ -65,8 +79,6 @@
         </div>
         <br>
         <br>
-
- 
                 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>

@@ -175,6 +175,7 @@
             <input type="password" id="password" name="password"><br>
             <label for="confirmpassword" id="confirmpassword" name="confirmpassword">Passwort bestaetigen: </label><br>
             <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
+            <a href="login.php">Sie haben bereits ein Kundenkonto</a><br><br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

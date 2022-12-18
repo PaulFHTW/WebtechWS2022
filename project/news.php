@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include_once 'dbaccess.php'; ?>
 <?php 
     if(!isset($_SESSION['admin'])){
         header("Location: index.php");
@@ -14,14 +15,25 @@
     </head>
 <body>
     <?php include 'navigation/navbar.php'?>
-<div class="room-form">
-    <form action="admin.php" method="post" enctype="multipart/form-data">
-    <p>Select image to upload:</p><br>
-    <input type="file" name="file" id="file">
-    <button type="submit" class="btn btn-primary" name="submit">Upload</button>
-    </form>
-</div>
-<?php  
+
+<?php 
+    $emptyErr = false; $successText = false;
+
+    $news = $_POST['news'];
+
+    if(empty($news)){
+        $emptyErr = "Please input Text";
+    }
+    else{
+        $sql = "INSERT INTO news (text, date) VALUES ('$news', SYSDATE());";
+
+        $result = mysqli_query($conn, $sql);     
+
+        $successText = "News has been updated";
+    }
+
+    $sizeErr = false; $uploadErr = false; $filetypeErr = false; $successMsg = false;
+
         if(isset($_POST["submit"])){
             //var_dump($_FILES);
             $file = $_FILES["file"];
@@ -42,19 +54,62 @@
                         $fileNameNew = "pic1".".".$fileActualExt;
                         $fileDestination = "uploads/". $fileNameNew;
                         move_uploaded_file($fileTmpName, $fileDestination);
-                        echo '<span style=color:green>File uploaded successfully</span>';
+                        $successMsg = "File uploaded successfully";
                     }else{
-                        echo '<span style=color:red>File size too big</span>';
+                        $sizeErr = "File size too big";
                     }
                 }else{
-                    echo '<span style=color:red>Error uploading File</span>';
+                    $uploadErr = "Error uploading File";
                 }
             }else{
-                echo '<span style=color:red>Only images files allowed</span>';
+                $filetypeErr = "Only jpg and png files are allowed";
             }
         }
-    ?>
-    <img src="uploads/pic1.jpg" alt="pic" width="720" height="480">
+
+        if($successMsg){
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong>'. $successMsg .'
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+        if($successText){
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong>'. $successText .'
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    
+        if($sizeErr){
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> '. $sizeErr .' 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+        if($uploadErr){
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> '. $uploadErr .' 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+
+        if($filetypeErr){
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> '. $filetypeErr .' 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+?>
+
+    <div class="room-form">
+        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+        <p>Important messages only:</p>
+        <textarea id="news" name="news" rows="8" cols="50"></textarea><br><br>
+        <p>Select image to upload:</p><br>
+        <input type="file" name="file" id="file">
+        <button type="submit" class="btn btn-primary" name="submit">Upload</button>
+        </form>
+    </div>
 </body>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
