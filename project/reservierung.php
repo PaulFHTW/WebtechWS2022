@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="style/room.css"/>
     </head>
     <body>
-    <?php include 'navigation/navbar.php'; ?>
+    <?php include 'navigation/navbar.php'; ?><br><br>
 <?php
     $personErr = false; $suiteErr = false; $ankunftErr = false; $abreiseErr = false; $roomErr = false;
 
@@ -77,7 +77,7 @@
         </div>';
     }
 
-    if($ankunftErr){
+    /*if($ankunftErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> '. $ankunftErr .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -89,7 +89,7 @@
         <strong>Error!</strong> '. $abreiseErr .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
-    }
+    }*/
 
     if($roomErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -98,7 +98,29 @@
         </div>';
     }
 ?>
-        
+    <div class="container">
+        <div class="row justify-content-start">
+
+                <div class="col-sm-4">
+                <img src="images/room1.jpg" class="room-img">
+                    <p class="room-desc">Dreamer Deluxe Suite</p>
+                    <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
+                    <li class="desc">Zimmergröße 38 - 40 m2</li>
+                    <li class="desc">direkter Blick aufs Meer</li>
+                </div>
+
+                <div class="col-sm-4">
+                <img src="images/room2.jpg" class="room-img"> 
+                    <p class="room-desc">Sunshine Deluxe Suite</p>
+                    <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
+                    <li class="desc">Zimmergröße 36 - 42 m2</li>
+                    <li class="desc">direkter Blick aufs Meer</li>
+                </div>
+
+
+
+
+<div class="col-sm-4">
     <div class="room-form">
         <form action="<?php $_SERVER[" PHP_SELF "];?>" method="post">
         <p>Zimmer Reservierung</p>
@@ -114,12 +136,12 @@
             <option value="Dreamer">Dreamer Deluxe Suite</option>
             <option value="Sunshine">Sunshine Deluxe Suite</option>
         </select>
-
+        
             <label for="ankufnt">Ankunft: </label><br>
-            <input type="date" class ="date" id="ankunft" name="ankunft"><br>
+            <input type="date" class="date" id="ankunft" name="ankunft"><br>
             <label for="abreise">Abreise: </label><br>
-            <input type="date" class ="date" id="abreise" name="abreise"><br><br>
-
+            <input type="date" class="date" id="abreise" name="abreise"><br><br>
+        
             <label for="haustiere">Haustiere : </label><br>
             <input type="checkbox" id="tier" name="tier" value="tier">
             <label for="haustiere">+ $150</label><br><br>
@@ -134,7 +156,13 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    
+</div>
+
+
+        </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </hmtl>

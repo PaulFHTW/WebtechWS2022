@@ -10,9 +10,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+            <?php if(!isset($_SESSION['username'])){?>
             <li class="nav-item">
                 <a class="nav-link" href="login.php">Login</a>
             </li>
+            <?php }?>
+            <?php if(isset($_SESSION['username'])){?>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservierung.php">Reservierung</a>
+                </li> 
+            <?php }?>
+            <?php if(isset($_SESSION['username'])){?>
+                <li class="nav-item">
+                    <a class="nav-link" href="profil.php">Profil</a>
+                </li> 
+            <?php }?>
+            <?php if(isset($_SESSION['admin'])){?>
+                <li class="nav-item">
+                    <a class="nav-link" href="news.php">News</a>
+                </li> 
+            <?php }?>
+            <?php if(isset($_SESSION['admin'])){?>
+                <li class="nav-item">
+                    <a class="nav-link" href="manageuser.php">Verwaltung</a>
+                </li> 
+            <?php }?>
             <li class="nav-item">
                 <a class="nav-link" href="register.php">Register</a>
             </li>

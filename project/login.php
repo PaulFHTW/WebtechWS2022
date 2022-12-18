@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php session_start();?>
+<?php if(isset($_SESSION['username'])){
+    header("Location: reservierung.php");
+}?>
 <?php include_once 'dbaccess.php';?>
 <html lang="de">
     <head>

@@ -26,7 +26,7 @@
         </p>
         <div class="container">
             <div class="row justify-content-start">
-                <div class="col-12">
+                <div class="col-md-12">
                     <h4 class="news">News</h4>
                     <br>
                     <img src="uploads/pic1.png" class="img-thumbnail rounded float-end" alt="picture">
@@ -53,7 +53,7 @@
                 
         <div class="container">
             <div class="row justify-content-start">
-                <div class="col-6">
+                <div class="col-md-6">
                 <img src="images/room1.jpg" class="room-img">
                     <p class="room-desc">Dreamer Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
@@ -66,7 +66,7 @@
                     </div>
                     <br>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                 <img src="images/room2.jpg" class="room-img"> 
                     <p class="room-desc">Sunshine Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>

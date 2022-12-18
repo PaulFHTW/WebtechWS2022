@@ -1,7 +1,7 @@
 form{
     margin-top: 50px;
     margin-bottom: 50px;
-    border-style: solid;
+    
     border-color: lightgray;
     border-radius: 15px;
     padding: 40px;
@@ -31,4 +31,24 @@ p{
     border-radius: 5px;
     padding: 10px;
     padding-right: 75px;
+}
+
+.col-sm-4{
+    background-color: whitesmoke;
+    border: solid;
+    border-color: lightgrey;
+    border-style: outset;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.room-img{
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 25px;
+}
+
+.desc{
+    margin-left: 25px;
+    padding: 10px;
 }
