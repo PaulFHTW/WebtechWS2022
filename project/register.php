@@ -24,43 +24,43 @@
         $confpassword = $_POST['confirmpassword'];
 
         if (empty($anrede)) {
-            $anredeErr = "Anrede is required";
+            $anredeErr = "Anrede ist erforderlich";
         } else {
             $anrede = test_input($_POST["username"]);
         }
 
         if (empty($vorname)) {
-            $vornameErr = "Vorname is required";
+            $vornameErr = "Vorname ist erforderlich";
         } else {
             $vorname = test_input($_POST["username"]);
         }
 
         if (empty($nachname)) {
-            $nachnameErr = "Nachname is required";
+            $nachnameErr = "Nachname ist erforderlich";
         } else {
             $nachname = test_input($_POST["username"]);
         }
 
         if (empty($username)) {
-            $usernameErr = "Username is required";
+            $usernameErr = "Username ist erforderlich";
         } else {
             $username = test_input($_POST["username"]);
         }
 
         if (empty($email)) {
-            $emailErr = "Email is required";  
+            $emailErr = "Email ist erforderlich";  
         } else {
             $email = test_input($_POST["email"]);
         }
 
         if (empty($password)) {
-            $passwordErr = "Password is required";   
+            $passwordErr = "Passwort ist erforderlich";   
         } else {
             $password = test_input($_POST["password"]);
         }
 
         if($password != $confpassword){
-            $confpasswordErr = "Passwords do not match";  
+            $confpasswordErr = "Passworte sind nicht gleich";  
         }else{
             $confpassword = test_input($_POST["confirmpassword"]);
         }

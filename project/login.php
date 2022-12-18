@@ -19,14 +19,14 @@
         $password = $_POST['password'];
 
         if(empty($username)){
-            $usernameErr = "Username required";
+            $usernameErr = "Username erforderlich";
         }
         else{
             $username = test_input($username);
         }
         
         if(empty($password)){
-            $passwordErr = "Password required";
+            $passwordErr = "Passwort erforderlich";
         }
         else{
             $password = test_input($password);
@@ -45,7 +45,7 @@
             }
 
             if($num == 0){
-                $exists = "Incorrect Username or Password";
+                $exists = "Falscher Username oder Passwort";
             }
 
         }

@@ -12,10 +12,10 @@
 <?php 
     if(isset($_SESSION["username"]) || isset($_SESSION["admin"])){
         session_destroy();
-        echo "Logged out!";
+        echo "Sie wurden abgemeldet!";
     }
     else{
-        echo "You are not logged in!";
+        echo "Sie sind nicht angemeldet!";
     }
 ?>
 </body>

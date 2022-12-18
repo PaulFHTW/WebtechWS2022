@@ -52,7 +52,7 @@
             }
         }
         if($num > 0){
-            $roomErr = "This Suite is already booked";
+            $roomErr = "Diese Suite ist bereits verbucht";
         }
     }
 
@@ -116,9 +116,9 @@
         </select>
 
             <label for="ankufnt">Ankunft: </label><br>
-            <input class="date" type="date" id="ankunft" name="ankunft"><br>
+            <input type="date" class ="date" id="ankunft" name="ankunft"><br>
             <label for="abreise">Abreise: </label><br>
-            <input class ="date" type="date" id="abreise" name="abreise"><br><br>
+            <input type="date" class ="date" id="abreise" name="abreise"><br><br>
 
             <label for="haustiere">Haustiere : </label><br>
             <input type="checkbox" id="tier" name="tier" value="tier">
