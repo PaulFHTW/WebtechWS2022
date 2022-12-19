@@ -1,0 +1,42 @@
+p{
+    margin-left: 0px;
+}
+
+.greeting{
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.date{
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 75px;
+}
+
+.col-lg-4{
+    
+
+}
+
+.room-img{
+    width: 100%;
+    border: solid;
+    border-color: lightgrey;
+    border-style: outset;
+}
+.room-desc{
+    padding-top: 15px;
+    font-weight: bold;
+}
+.desc{
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.headline{
+    font-size: 30px;
+    font-weight:bold;
+    text-align: center;
+}
