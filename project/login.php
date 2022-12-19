@@ -44,7 +44,7 @@
 
             if($num > 0){
                 $_SESSION['username'] = $username;
-                header("Location: reservierung.php");
+                header("Location: profil.php");
             }
 
             if($num == 0){
