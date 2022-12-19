@@ -1,5 +1,8 @@
 <?php session_start();?>
 <?php include_once 'dbaccess.php'; ?>
+<?php if(!isset($_SESSION['username'])){
+    header("Location: register.php");
+}?>
 <!DOCTYPE html>
 <hmtl lang="de">
     <head>
@@ -126,8 +129,6 @@
                     <li class="desc">Zimmergröße 36 - 42 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
                 </div>
-    </div>
-</div>
 
 <div class="col-lg-4">
     <div class="room-form">
@@ -152,15 +153,15 @@
         
             <label for="haustiere">Haustiere : </label><br>
             <input type="checkbox" id="tier" name="tier" value="tier">
-            <label for="haustiere">+ $150</label><br><br>
+            <label for="haustiere">+ 150€</label><br><br>
 
             <label for="all-inclusive">Fruehstueck : </label><br>
             <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
-            <label for="all-inclusive">+ $50 pro Person & Tag</label><br><br>
+            <label for="all-inclusive">+ 50€ pro Person & Tag</label><br><br>
 
             <label for="all-inclusive">Parkplatz : </label><br>
             <input type="checkbox" id="parking" name="parking" value="parking">
-            <label for="all-inclusive">+ $20 pro Tag</label><br><br>
+            <label for="all-inclusive">+ 20€ pro Tag</label><br><br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
