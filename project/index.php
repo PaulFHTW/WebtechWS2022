@@ -54,7 +54,7 @@
         <div class="container">
             <div class="row justify-content-start">
                 <div class="col-lg-6">
-                <img src="uploads/room1.jpg" class="room-img">
+                <img src="images/room1.jpg" class="room-img">
                     <p class="room-desc">Dreamer Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
                     <li class="desc">Zimmergröße 38 - 40 m2</li>
@@ -71,7 +71,7 @@
                     <br>
                 </div>
                 <div class="col-lg-6">
-                <img src="uploads/room2.jpg" class="room-img"> 
+                <img src="images/room2.jpg" class="room-img"> 
                     <p class="room-desc">Sunshine Deluxe Suite</p>
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
                     <li class="desc">Zimmergröße 36 - 42 m2</li>
