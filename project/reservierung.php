@@ -20,7 +20,7 @@
     $var2 = mysqli_query($conn, $var1);
     $row = mysqli_fetch_assoc($var2);
     $UID = $row['UID'];
-
+    
     $person = $_POST['person'];
     $suite = $_POST['suite'];
     $ankunft = $_POST['ankunft'];
