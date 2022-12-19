@@ -101,11 +101,11 @@
 ?>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-6">
+        <div class="col-lg-6">
             <div class="news-form">
                 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                 <p>Important messages only:</p>
-                <textarea id="news" name="news" rows="8" cols="50"></textarea><br><br>
+                <textarea id="news" name="news" rows="8" cols="40"></textarea><br><br>
                 <p>Select image to upload:</p><br>
                 <input type="file" name="file" id="file">
                 <button type="submit" class="btn btn-primary" name="submit">Upload</button>
