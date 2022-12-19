@@ -108,8 +108,8 @@
     }
 ?>
 
-    <div class="container">
-        <div class="row justify-content-start">
+<div class="container">
+    <div class="row justify-content-start">
 
                 <div class="col-lg-4">
                 <img src="images/room1.jpg" class="room-img">
@@ -126,9 +126,8 @@
                     <li class="desc">Zimmergröße 36 - 42 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
                 </div>
-
-
-
+    </div>
+</div>
 
 <div class="col-lg-4">
     <div class="room-form">
