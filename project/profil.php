@@ -71,8 +71,6 @@
     else{
         $reservierungErr = "Sie haben noch keine Reservierungen!";
     }
-
-
 ?>
 
 <div class="container">
