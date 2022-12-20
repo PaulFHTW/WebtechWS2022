@@ -65,6 +65,7 @@
             $confpassword = test_input($_POST["confirmpassword"]);
         }
 
+        $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
         $sql = "SELECT * FROM user WHERE username = '$username';";
 
@@ -74,7 +75,7 @@
     
         if($anredeErr == false && $vornameErr == false && $nachnameErr == false && $usernameErr == false && $emailErr == false && $passwordErr == false && $confpasswordErr == false){
             if($num == 0){
-                $sql = "INSERT INTO user (anrede, vorname, nachname, username, email, password) VALUES ('$anrede', '$vorname', '$nachname', '$username', '$email', '$password');";
+                $sql = "INSERT INTO user (anrede, vorname, nachname, username, email, password) VALUES ('$anrede', '$vorname', '$nachname', '$username', '$email', '$hash');";
         
                 $result = mysqli_query($conn, $sql);
         
@@ -146,7 +147,7 @@
     }
     if($confpasswordErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $confpasswordErrErr .' 
+        <strong>Error!</strong> '. $confpasswordErr .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }

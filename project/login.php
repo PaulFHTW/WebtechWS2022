@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php session_start();?>
 <?php if(isset($_SESSION['username'])){
-    header("Location: reservierung.php");
+    header("Location: profil.php");
 }?>
 <?php include_once 'dbaccess.php';?>
 <html lang="de">
@@ -14,7 +14,6 @@
     <body>
     <?php include 'navigation/navbar.php'; ?>
 <?php
-
     $usernameErr = false; $passwordErr = false; $exists = false;
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -34,17 +33,25 @@
         else{
             $password = test_input($password);
         }
+        
 
         if($usernameErr == false && $passwordErr == false){
-            $sql = "SELECT username, password FROM user WHERE username = '$username' AND password = '$password';";
-
+            
+            $sql = "SELECT * FROM user WHERE username = '$username';";
             $result = mysqli_query($conn, $sql);
-
+            //check if username exists
             $num = mysqli_num_rows($result);
+            //get array with all data for that username
+            $row = mysqli_fetch_assoc($result);
 
             if($num > 0){
-                $_SESSION['username'] = $username;
-                header("Location: profil.php");
+                if(password_verify($password, $row['password'])){
+                    $_SESSION['username'] = $username;
+                    header("Location: profil.php");
+                }
+                else{
+                    $exists = "Falscher Username oder Passwort";
+                }
             }
 
             if($num == 0){
