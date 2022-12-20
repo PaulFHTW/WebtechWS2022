@@ -26,19 +26,19 @@
         if (empty($anrede)) {
             $anredeErr = "Anrede ist erforderlich";
         } else {
-            $anrede = test_input($_POST["username"]);
+            $anrede = test_input($_POST["anrede"]);
         }
 
         if (empty($vorname)) {
             $vornameErr = "Vorname ist erforderlich";
         } else {
-            $vorname = test_input($_POST["username"]);
+            $vorname = test_input($_POST["vorname"]);
         }
 
         if (empty($nachname)) {
             $nachnameErr = "Nachname ist erforderlich";
         } else {
-            $nachname = test_input($_POST["username"]);
+            $nachname = test_input($_POST["nachname"]);
         }
 
         if (empty($username)) {

@@ -22,14 +22,17 @@
     $row = mysqli_fetch_assoc($var2);
     $UID = $row['UID'];
 
-    $sql = "SELECT username, email FROM user WHERE UID = $UID;";
+    $sql = "SELECT * FROM user WHERE UID = $UID;";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     
+    $anrede = $row['anrede'];
+    $vorname = $row['vorname'];
+    $nachname = $row['nachname'];
     $accountname = $row['username'];
     $email = $row['email'];
 
-    $sql = "SELECT personen, suite, ankunft, abreise, tier, breakfast, parkplatz, status FROM reservierung WHERE FK_UID = $UID;";
+    $sql = "SELECT * FROM reservierung WHERE FK_UID = $UID;";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
 
@@ -40,24 +43,27 @@
         $ankunft = $row['ankunft'];
         $abreise = $row['abreise'];
         $tier = $row['tier'];
-        if($tier == NULL){
+        $parkplatz = $row['parkplatz'];
+        $breakfast = $row['breakfast'];
+
+        if($tier == 0){
             $tier = "Nein";
         }
-        if($tier != NULL){
+        if($tier == 1){
             $tier = "Ja";
         }
-        $breakfast = $row['breakfast'];
-        if($breakfast == NULL){
+
+        if($breakfast == 0){
             $breakfast = "Nein";
         }
-        if($breakfast != NULL){
+        if($breakfast == 1){
             $breakfast = "Ja";
         }
-        $parkplatz = $row['parkplatz'];
-        if($parkplatz == NULL){
+    
+        if($parkplatz == 0){
             $parkplatz = "Nein";
         }
-        if($parkplatz != NULL){
+        if($parkplatz == 1){
             $parkplatz = "Ja";
         }
         $status = $row['status'];
@@ -74,9 +80,17 @@
     <p class="greeting">Reservierung & Konto</p>
                 <div class="col-lg-4">
                     <p class="room-desc">Konto informationen</p>
+                    <li class="desc">Anrede: <?php echo $anrede; ?></li>
+                    <li class="desc">Vorname: <?php echo $vorname; ?></li>
+                    <li class="desc">Nachname: <?php echo $nachname; ?></li>
                     <li class="desc">Nutzername: <?php echo $accountname; ?></li>
-                    <li class="desc">E-Mail: <?php echo $email; ?></li>
-    
+                    <li class="desc">E-Mail: <?php echo $email; ?></li><br>
+                    <div class="d-grid gap-2 col-lg-4 ">
+                        <button class="btn btn-dark" type="button">Bearbeiten</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
                     <p class="room-desc">Reservierungs Details</p>
                     <?php if($num == 0){?>
                         <li class="desc" style="color: red"><?php echo $reservierungErr; ?></li>

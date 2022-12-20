@@ -59,7 +59,7 @@
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
                     <li class="desc">Zimmergröße 38 - 40 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
-                    <div class="d-grid gap-2 col-4 mx-auto">
+                    <div class="d-grid gap-2 col-6 mx-auto">
                     <?php if(isset($_SESSION['username'])){?>
                     <a href="reservierung.php"><?php }
                     else{ ?>
@@ -76,7 +76,7 @@
                     <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
                     <li class="desc">Zimmergröße 36 - 42 m2</li>
                     <li class="desc">direkter Blick aufs Meer</li>
-                    <div class="d-grid gap-2 col-4 mx-auto">
+                    <div class="d-grid gap-2 col-6 mx-auto">
                     <?php if(isset($_SESSION['username'])){?>
                     <a href="reservierung.php"><?php }
                     else{ ?>
