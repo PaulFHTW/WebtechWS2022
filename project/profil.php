@@ -16,12 +16,14 @@
 
 <?php
     $reservierungErr = false;
+    //get UID for logged in user
     $username = $_SESSION['username'];
     $var1 = "SELECT UID FROM user WHERE username='$username';";
     $var2 = mysqli_query($conn, $var1);
     $row = mysqli_fetch_assoc($var2);
     $UID = $row['UID'];
 
+    //get all data for logged in user
     $sql = "SELECT * FROM user WHERE UID = $UID;";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -32,6 +34,7 @@
     $accountname = $row['username'];
     $email = $row['email'];
 
+    //get reservation for logged in user
     $sql = "SELECT * FROM reservierung WHERE FK_UID = $UID;";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
@@ -106,7 +109,7 @@
                 </div>
     </div>
 </div>
-
+<?php include 'navigation/loginstatus.php'; ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </hmtl>

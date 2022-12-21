@@ -10,6 +10,7 @@
     </head>
     <body> 
     <?php include "navigation/navbar.php"; ?>
+
 <?php 
     $anredeErr = false; $vornameErr = false; $nachnameErr = false;
     $usernameErr = false; $emailErr = false; $passwordErr = false; $confpasswordErr = false; $showAlert = false; $exists = false;
@@ -67,6 +68,7 @@
 
         $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
+        //check if username already exists
         $sql = "SELECT * FROM user WHERE username = '$username';";
 
         $result = mysqli_query($conn, $sql);
@@ -180,7 +182,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
+<?php include 'navigation/loginstatus.php'; ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -23,3 +23,8 @@ form p{
 p{
     margin-left: 0px;
 }
+
+.loginstatus{
+    font-weight: bold;
+    padding: 25px;
+}

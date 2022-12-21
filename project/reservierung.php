@@ -13,6 +13,7 @@
     </head>
     <body>
     <?php include 'navigation/navbar.php'; ?><br><br>
+
     <p class="headline">Zimmer Reservierung</p>
 <?php
     $personErr = false; $suiteErr = false; $ankunftErr = false; $abreiseErr = false; $roomErr = false;
@@ -63,6 +64,7 @@
     if(!empty($breakfast)){
         $breakfast = 1;
     }
+
     //Check if Suite is already booked on the arrival day
     $sql = "SELECT ankunft, suite FROM reservierung WHERE ankunft='$ankunft' AND suite='$suite';";
 
@@ -131,64 +133,57 @@
 
 <div class="container">
     <div class="row justify-content-start">
+        <div class="col-lg-4">
+            <img src="images/room1.jpg" class="room-img">
+                <p class="room-desc">Dreamer Deluxe Suite</p>
+                <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
+                <li class="desc">Zimmergröße 38 - 40 m2</li>
+                <li class="desc">direkter Blick aufs Meer</li>
+        </div>
 
-                <div class="col-lg-4">
-                <img src="images/room1.jpg" class="room-img">
-                    <p class="room-desc">Dreamer Deluxe Suite</p>
-                    <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
-                    <li class="desc">Zimmergröße 38 - 40 m2</li>
-                    <li class="desc">direkter Blick aufs Meer</li>
-                </div>
+        <div class="col-lg-4">
+            <img src="images/room2.jpg" class="room-img"> 
+                <p class="room-desc">Sunshine Deluxe Suite</p>
+                <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
+                <li class="desc">Zimmergröße 36 - 42 m2</li>
+                <li class="desc">direkter Blick aufs Meer</li>
+        </div>
 
-                <div class="col-lg-4">
-                <img src="images/room2.jpg" class="room-img"> 
-                    <p class="room-desc">Sunshine Deluxe Suite</p>
-                    <li class="desc">Kapazität des Zimmers: 2 - 4 Personen</li>
-                    <li class="desc">Zimmergröße 36 - 42 m2</li>
-                    <li class="desc">direkter Blick aufs Meer</li>
-                </div>
-
-<div class="col-lg-4">
-    <div class="room-form">
-        <form action="<?php $_SERVER[" PHP_SELF "];?>" method="post">
-        <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="person">
-            <option selected>Personen Anzahl</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="suite">
-            <option selected>Suite</option>
-            <option value="Dreamer">Dreamer Deluxe Suite</option>
-            <option value="Sunshine">Sunshine Deluxe Suite</option>
-        </select>
-        
-            <label for="ankufnt">Ankunft: </label><br>
-            <input type="date" class="date" id="ankunft" name="ankunft"><br>
-            <label for="abreise">Abreise: </label><br>
-            <input type="date" class="date" id="abreise" name="abreise"><br><br>
-        
-            <input type="checkbox" id="tier" name="tier" value="tier">
-            <label for="tier">Haustiere: </label><br>
-            <label for="tier">+ 150€</label><br><br>
-
-            <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
-            <label for="breakfast">Fruehstueck: </label><br>
-            <label for="breakfast">+ 50€ pro Person & Tag</label><br><br>
-
-            <input type="checkbox" id="parkplatz" name="parkplatz" value="parkplatz">
-            <label for="parkplatz">Parkplatz: </label><br>
-            <label for="parkplatz">+ 20€ pro Tag</label><br><br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-</div>
-
-
+        <div class="col-lg-4">
+            <div class="room-form">
+                <form action="<?php $_SERVER[" PHP_SELF "];?>" method="post">
+                <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="person">
+                    <option selected>Personen Anzahl</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="suite">
+                    <option selected>Suite</option>
+                    <option value="Dreamer">Dreamer Deluxe Suite</option>
+                    <option value="Sunshine">Sunshine Deluxe Suite</option>
+                </select>
+                    <label for="ankufnt">Ankunft: </label><br>
+                    <input type="date" class="date" id="ankunft" name="ankunft"><br>
+                    <label for="abreise">Abreise: </label><br>
+                    <input type="date" class="date" id="abreise" name="abreise"><br><br>
+                    <input type="checkbox" id="tier" name="tier" value="tier">
+                    <label for="tier">Haustiere: </label><br>
+                    <label for="tier">+ 150€</label><br><br>
+                    <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
+                    <label for="breakfast">Fruehstueck: </label><br>
+                    <label for="breakfast">+ 50€ pro Person & Tag</label><br><br>
+                    <input type="checkbox" id="parkplatz" name="parkplatz" value="parkplatz">
+                    <label for="parkplatz">Parkplatz: </label><br>
+                    <label for="parkplatz">+ 20€ pro Tag</label><br><br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-
+</div>
+<?php include 'navigation/loginstatus.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>

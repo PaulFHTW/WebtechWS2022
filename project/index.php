@@ -29,9 +29,9 @@
                 <div class="col-lg-12">
                     <h4 class="news">News</h4>
                     <br>
-                    <img src="uploads/pic1.png" class="img-thumbnail rounded float-end" alt="picture">
+                    <img src="uploads/pic1.png" class="img-thumbnail rounded float-end" alt="picture" height="600px" width="500px">
                     <?php
-                        $sql = "SELECT * FROM news;";
+                        $sql = "SELECT * FROM news ORDER BY date DESC;";
 
                         $result = mysqli_query($conn, $sql);
 
@@ -91,6 +91,6 @@
         </div>
         <br>
         <br>
-                
+        <?php include 'navigation/loginstatus.php'; ?>  
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>

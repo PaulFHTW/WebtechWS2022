@@ -41,3 +41,8 @@ p{
 .greeting{
     text-align: center;
 }
+
+.loginstatus{
+    font-weight: bold;
+    padding: 25px;
+}
