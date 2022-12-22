@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-8">
                     <p style="font-weight: bold">Inhaber: Tobias Schuh & Paul Bogza</p>
-                    <img src="images/paul.jpeg" class="imp-img">
+                    <img src="images/tobias.jpg" class="imp-img">
                     <img src="images/paul.jpeg" class="imp-img">
                 </div>
             </div>

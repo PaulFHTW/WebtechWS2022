@@ -66,7 +66,7 @@
     }
 
     //Check if Suite is already booked on the arrival day
-    $sql = "SELECT ankunft, suite FROM reservierung WHERE ankunft='$ankunft' AND suite='$suite';";
+    $sql = "SELECT ankunft, abreise, suite FROM reservierung WHERE ankunft='$ankunft' AND abreise='$abreise' AND suite='$suite';";
 
     $result = mysqli_query($conn, $sql);
 

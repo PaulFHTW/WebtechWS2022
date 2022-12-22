@@ -7,13 +7,13 @@ $username = $_SESSION['username'];
 $admin = $_SESSION['admin'];
 
 if(isset($_SESSION['username'])){
-    echo "Logged in as $username";
+    echo "Eingelogged als $username";
 }
 else if(isset($_SESSION['admin'])){
-    echo "Logged in as $admin";
+    echo "Eingelogged als $admin";
 }
 else{
-    echo "Not logged in";
+    echo "Nicht eingelogged";
 }
 
 ?>
