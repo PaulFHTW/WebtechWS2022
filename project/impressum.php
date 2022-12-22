@@ -23,7 +23,7 @@
                     <p>E-Mail: email@server.at</p>
                     <p>Gewerbeordnung: <a href="www.ris.bka.at">www.ris.bka.at</a></p>
                     <p>Berzirkshauptmannschaft Musterstadt</p>
-                    <p>Verbraucher haben die Moeglichkeit,
+                    <p>Verbraucher haben die Möglichkeit,
                         Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten:</p>
                     <p><a href="http://ec.europa.eu/odr">http://ec.europa.eu/odr</a></p>
                 </div>

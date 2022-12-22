@@ -89,7 +89,7 @@
                 }    
             }
             if($num > 0){
-                $exists = "Username not available";
+                $exists = "Username nicht verfügbar";
             }
         }
     }
@@ -103,7 +103,7 @@
 
     if($showAlert){
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Success!</strong>Your Account was created and you can now log in
+        <strong>Success!</strong>Ihr Konto wurde erfolgreich angelegt
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }

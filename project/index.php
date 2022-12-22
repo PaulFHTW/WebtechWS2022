@@ -65,7 +65,9 @@
                     <a href="reservierung.php"><?php }
                     else{ ?>
                     <a href="register.php"><?php }?>
-                            <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                    </div>
                         </a>
                     </a>
                     </div>
@@ -82,7 +84,9 @@
                     <a href="reservierung.php"><?php }
                     else{ ?>
                     <a href="register.php"><?php }?>
-                            <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary" type="button">Jetzt buchen</button>
+                    </div>
                         </a>
                     </a>
                     </div>

@@ -86,9 +86,16 @@
                     <li class="desc">Nachname: <?php echo $nachname; ?></li>
                     <li class="desc">Nutzername: <?php echo $accountname; ?></li>
                     <li class="desc">E-Mail: <?php echo $email; ?></li><br>
-                    <div class="d-grid gap-2 col-lg-4 ">
-                        <button class="btn btn-dark" type="button">Bearbeiten</button>
-                    </div>
+                    <a href="bearbeiten.php">
+                        <div class="d-grid gap-2 col-lg-6 ">
+                            <button class="btn btn-dark" type="button">Bearbeiten</button><br>
+                        </div>
+                    </a>
+                    <a href="changepw.php">
+                        <div class="d-grid gap-2 col-lg-6 ">
+                            <button class="btn btn-dark" type="button">Passwort ändern</button>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-4">
@@ -102,7 +109,7 @@
                     <li class="desc">Ankunft: <?php echo $ankunft; ?></li>
                     <li class="desc">Abreise: <?php echo $abreise; ?></li>
                     <li class="desc">Haustier: <?php echo $tier; ?></li>
-                    <li class="desc">Fruehstueck: <?php echo $breakfast; ?></li>
+                    <li class="desc">Frühstück: <?php echo $breakfast; ?></li>
                     <li class="desc">Parkplatz: <?php echo $parkplatz; ?></li>
                     <li class="desc">Status: <?php echo $status; ?></li>
                     <?php }?>

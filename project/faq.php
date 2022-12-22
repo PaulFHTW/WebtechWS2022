@@ -12,7 +12,7 @@
         <p class="topic">Hilfe fuer Nutzer<p>
 
         <p>Falls Sie fragen zur Reservierung oder Zusatzpaketen haben,<br>
-        stehen wir Ihnen jederzeit telefonisch oder per E-Mail zur Verfuegung</p>
+        stehen wir Ihnen jederzeit telefonisch oder per E-Mail zur Verfügung</p>
 
         <p>Tel.: +43 123 123456789</p>
         <p>E-Mail: email@server.at</p>

@@ -172,7 +172,7 @@
                     <label for="tier">Haustiere: </label><br>
                     <label for="tier">+ 150€</label><br><br>
                     <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
-                    <label for="breakfast">Fruehstueck: </label><br>
+                    <label for="breakfast">Frühstück: </label><br>
                     <label for="breakfast">+ 50€ pro Person & Tag</label><br><br>
                     <input type="checkbox" id="parkplatz" name="parkplatz" value="parkplatz">
                     <label for="parkplatz">Parkplatz: </label><br>
