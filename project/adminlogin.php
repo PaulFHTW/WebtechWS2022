@@ -41,7 +41,7 @@
 
             if($num > 0){
                 $_SESSION['admin'] = "admin";
-                header("Location: news.php");
+                header("Location: verwaltung.php");
             }
 
             if($num == 0){

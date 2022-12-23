@@ -14,7 +14,7 @@
     <body>
     <?php include 'navigation/navbar.php'; ?>
 <?php
-    $usernameErr = false; $passwordErr = false; $exists = false;
+    $usernameErr = false; $passwordErr = false; $exists = false; $statusErr = false;
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username = $_POST['username'];
@@ -45,6 +45,9 @@
             $row = mysqli_fetch_assoc($result);
 
             if($num > 0){
+                if($row['status'] == 0){
+                    $statusErr = "Ihr Nutzerkonto ist inaktiv";
+                }
                 //compare hashed password with typed in password
                 if(password_verify($password, $row['password'])){
                     $_SESSION['username'] = $username;
@@ -75,15 +78,24 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
+
     if($passwordErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> '. $passwordErr .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
+
     if($exists){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> '. $exists .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+
+    if($statusErr){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $statusErr .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }

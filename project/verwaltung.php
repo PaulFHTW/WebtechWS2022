@@ -19,22 +19,30 @@
 <?php
     $sql = "SELECT * FROM user;";
     $result = mysqli_query($conn, $sql);?>
-
+<p class="greeting">Nutzer Konten & Reservierungen</p>
         <div class="container">
             <div class="row justify-content-start">
-                <p class="greeting">Nutzer Konten & Reservierungen</p>
                     <div class="col-lg-4">
                         <p class="room-desc">Nutzer Konten</p>
                         <?php while($row = mysqli_fetch_assoc($result)){?>
+                            <?php
+                            if($row['status'] == 0){
+                                $accstatus = "Inaktiv";
+                            }
+                            if($row['status' == 1]){
+                                $accstatus = "Aktiv";
+                            }
+                            ?>
                         <li class="desc">Nutzer ID: <?php echo $row['UID']; ?></li>
                         <li class="desc">Anrede: <?php echo $row['anrede']; ?></li>
                         <li class="desc">Vorname: <?php echo $row['vorname']; ?></li>
                         <li class="desc">Nachname: <?php echo $row['nachname']; ?></li>
                         <li class="desc">Nutzername: <?php echo $row['username']; ?></li>
-                        <li class="desc">E-Mail: <?php echo $row['email']; ?></li><br>
+                        <li class="desc">E-Mail: <?php echo $row['email']; ?></li>
+                        <li class="desc">Status: <?php echo $accstatus; ?></li><br>
                         <p>-------------------------------------------------------</p>
                         <?php }?>
-                        <a href="bearbeiten.php">
+                        <a href="adminbearbeiten.php">
                             <div class="d-grid gap-2 col-lg-6 ">
                                 <button class="btn btn-dark" type="button">Bearbeiten</button><br>
                             </div>
@@ -84,7 +92,7 @@
                     <li class="desc">Status: <?php echo $row['status']; ?></li>
                     <p>-------------------------------------------------------</p>
                     <?php }?>
-                    <a href="bearbeiten.php">
+                    <a href="adminreservierung.php">
                         <div class="d-grid gap-2 col-lg-6 ">
                             <button class="btn btn-dark" type="button">Bearbeiten</button><br>
                         </div>

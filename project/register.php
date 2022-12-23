@@ -23,6 +23,7 @@
         $email = $_POST['email'];
         $password =  $_POST['password'];
         $confpassword = $_POST['confirmpassword'];
+        $status = "1";
 
         if (empty($anrede)) {
             $anredeErr = "Anrede ist erforderlich";
@@ -77,7 +78,7 @@
     
         if($anredeErr == false && $vornameErr == false && $nachnameErr == false && $usernameErr == false && $emailErr == false && $passwordErr == false && $confpasswordErr == false){
             if($num == 0){
-                $sql = "INSERT INTO user (anrede, vorname, nachname, username, email, password) VALUES ('$anrede', '$vorname', '$nachname', '$username', '$email', '$hash');";
+                $sql = "INSERT INTO user (anrede, vorname, nachname, username, email, password, status) VALUES ('$anrede', '$vorname', '$nachname', '$username', '$email', '$hash', '$status');";
         
                 $result = mysqli_query($conn, $sql);
         

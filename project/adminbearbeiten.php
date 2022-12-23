@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php session_start();?>
-<?php if(!isset($_SESSION['username'])){
-            header("Location: login.php");
+<?php if(!isset($_SESSION['admin'])){
+            header("Location: index.php");
         }?>
 <?php include_once 'dbaccess.php';?>
 <html lang="de">
@@ -15,32 +15,30 @@
     <?php include "navigation/navbar.php"; ?>
 
 <?php 
-    $anredeErr = false; $vornameErr = false; $nachnameErr = false; $usernameErr = false; $emailErr = false;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        //get UID for logged in user
-        $username = $_SESSION['username'];
-        $var1 = "SELECT UID FROM user WHERE username='$username';";
-        $var2 = mysqli_query($conn, $var1);
-        $row = mysqli_fetch_assoc($var2);
-        $UID = $row['UID'];
-
-        //get all data for logged in user
-        $sql = "SELECT * FROM user WHERE UID = $UID;";
+        
+        $UID = $_POST['UID'];
+        //get data for specified UID
+        $sql = "SELECT * FROM user WHERE UID = '$UID';";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
-        
+
         $anrede = $row['anrede'];
         $vorname = $row['vorname'];
         $nachname = $row['nachname'];
         $accountname = $row['username'];
         $email = $row['email'];
+        $password = $row['password'];
+        $status = $row['status'];
 
         $newanrede = $_POST['anrede'];
         $newvorname = $_POST['vorname'];
         $newnachname = $_POST['nachname'];
         $newusername = $_POST['username'];
         $newemail = $_POST['email'];
+        $newpassword = $_POST['password'];
+        $newstatus = $_POST['status'];
 
         if (empty($newanrede)) {
             $newanrede = $anrede;
@@ -72,6 +70,24 @@
             $newemail = test_input($_POST["email"]);
         }
 
+        if (empty($newpassword)) {
+            $newpassword = $password;  
+        } else {
+            $newpassword = test_input($_POST["email"]);
+        }
+
+        if ($status == "Status") {
+            $newstatus = $status;  
+        }
+
+        if($newstatus == "Aktiv"){
+            $newstatus = 1;
+        }
+
+        if($newstatus == "Inaktiv"){
+            $newstatus = 0;
+        }
+
         //check if username already exists
         $sql = "SELECT * FROM user WHERE username = '$newusername';";
         $result = mysqli_query($conn, $sql);
@@ -93,11 +109,17 @@
 
                 $sql = "UPDATE user SET email = '$newemail' WHERE UID = '$UID';";
                 $result = mysqli_query($conn, $sql);
+
+                $sql = "UPDATE user SET password = '$newpassword' WHERE UID = '$UID';";
+                $result = mysqli_query($conn, $sql);
                 
+                $sql = "UPDATE user SET status = '$newstatus' WHERE UID = '$UID';";
+                $result = mysqli_query($conn, $sql);
+
                 if($result){
                     $showAlert = true;
                 }
-          
+      
             }
             if($num > 1){
                 $exists = "Username nicht verfügbar";
@@ -114,7 +136,7 @@
 
     if($showAlert){
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Success!</strong>Ihre Kontodaten wurden erfolgreich geändert
+        <strong>Success!</strong>Kontodaten wurden erfolgreich geändert
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
@@ -129,7 +151,14 @@
 ?>
     <div class="user-form">
         <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
-            <p>Kontodaten bearbeiten</p>
+            <p>Nutzerdaten bearbeiten</p>
+            <label for="UID">Nutzer ID: </label><br>
+            <input type="number" id="UID" name="UID" placeholder="Nutzer ID"><br><br>
+            <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="status">
+                <option selected>Status</option>
+                <option value="1">Aktiv</option>
+                <option value="0">Inaktiv</option>
+            </select>
             <label for="anrede">Anrede: </label><br>
             <input type="text" id="anrede" name="anrede" placeholder="Neue Anrede"><br>
             <label for="vorname">Vorname: </label><br>
@@ -139,7 +168,9 @@
             <label for="username">Username: </label><br>
             <input type="text" id="username" name="username" placeholder="Neuer Username"><br>
             <label for="email">E-Mail: </label><br>
-            <input type="email" id="email" name="email" placeholder="Neue Email"><br><br>
+            <input type="email" id="email" name="email" placeholder="Neue Email"><br>
+            <label for="email">Passwort: </label><br>
+            <input type="password" id="password" name="password" placeholder="Neues Passwort"><br><br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

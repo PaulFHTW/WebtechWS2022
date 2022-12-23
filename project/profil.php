@@ -33,6 +33,14 @@
     $nachname = $row['nachname'];
     $accountname = $row['username'];
     $email = $row['email'];
+    $accstatus = $row['status'];
+
+    if($accstatus == 0){
+        $accstatus = "Inaktiv";
+    }
+    if($accstatus == 1){
+        $accstatus = "Aktiv";
+    }
 
     //get reservation for logged in user
     $sql = "SELECT * FROM reservierung WHERE FK_UID = $UID;";
@@ -75,17 +83,17 @@
         $reservierungErr = "Sie haben noch keine Reservierungen!";
     }
 ?>
-
+<p class="greeting">Reservierung & Konto</p>
 <div class="container">
     <div class="row justify-content-start">
-    <p class="greeting">Reservierung & Konto</p>
                 <div class="col-lg-4">
                     <p class="room-desc">Konto informationen</p>
                     <li class="desc">Anrede: <?php echo $anrede; ?></li>
                     <li class="desc">Vorname: <?php echo $vorname; ?></li>
                     <li class="desc">Nachname: <?php echo $nachname; ?></li>
                     <li class="desc">Nutzername: <?php echo $accountname; ?></li>
-                    <li class="desc">E-Mail: <?php echo $email; ?></li><br>
+                    <li class="desc">E-Mail: <?php echo $email; ?></li>
+                    <li class="desc">Status: <?php echo $accstatus; ?></li><br>
                     <a href="bearbeiten.php">
                         <div class="d-grid gap-2 col-lg-6 ">
                             <button class="btn btn-dark" type="button">Bearbeiten</button><br>
