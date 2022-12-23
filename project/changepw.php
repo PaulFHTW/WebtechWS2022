@@ -11,43 +11,54 @@
     <body>
     <?php include 'navigation/navbar.php'; ?>
 <?php
+    //get UID for logged in user
+    $username = $_SESSION['username'];
+    $var1 = "SELECT UID FROM user WHERE username='$username';";
+    $var2 = mysqli_query($conn, $var1);
+    $row = mysqli_fetch_assoc($var2);
+    $UID = $row['UID'];
 
-    $usernameErr = false; $passwordErr = false; $exists = false;
+    $oldpasswordErr = false; $wrongpasswordErr = false; $newpasswordErr = false; $confnewpasswordErr = false; $notmatchingErr = false;
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $oldpassword = $_POST['oldpassword'];
+        $newpassword = $_POST['newpassword'];
+        $confnewpassword = $_POST['confnewpassword'];
 
-        if(empty($username)){
-            $usernameErr = "Username erforderlich";
+        if(empty($oldpassword)){
+            $oldpasswordErr = "Bitte geben Sie ihr aktuelles Passwort ein";
+        }
+        if(empty($newpassword)){
+            $newpasswordErr = "Bitte geben Sie ihr neues Passwort ein";
         }
         else{
-            $username = test_input($username);
+            $newpassword = test_input($newpassword);
         }
-        
-        if(empty($password)){
-            $passwordErr = "Passwort erforderlich";
+        if(empty($confnewpassword)){
+            $confnewpasswordErr = "Bitte wiederholen Sie ihr neues Passwort";
         }
         else{
-            $password = test_input($password);
+            $confnewpassword = test_input($confnewpassword);
+        }
+        if($newpassword != $confnewpassword){
+            $notmatchingErr = "Die neuen Passworte stimmen nicht überein";
         }
 
-        if($usernameErr == false && $passwordErr == false){
-            $sql = "SELECT username, password FROM administrator WHERE username = '$username' AND password = '$password';";
+        $hash = password_hash($newpassword, PASSWORD_BCRYPT);
 
+        if($oldpasswordErr == false && $newpasswordErr == false && $confnewpasswordErr == false && $notmatchingErr == false){
+            $sql = "SELECT password FROM user WHERE username = '$username';";
             $result = mysqli_query($conn, $sql);
-
-            $num = mysqli_num_rows($result);
-
-            if($num > 0){
-                $_SESSION['admin'] = "admin";
-                header("Location: news.php");
+            $row = mysqli_fetch_assoc($result);
+    
+            if(password_verify($oldpassword, $row['password'])){
+                $sql = "UPDATE user SET password = '$hash' WHERE UID = '$UID';";
+                $result = mysqli_query($conn, $sql);
+                $showAlert = true;
             }
-
-            if($num == 0){
-                $exists = "Falscher Username oder Passwort";
+            else{
+                $wrongpasswordErr = "Aktuelles Passwort ist nicht richtig";
             }
-
         }
     }
     
@@ -58,21 +69,44 @@
         return $data; 
     }
 
-    if($usernameErr){
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $usernameErr .' 
+    if($showAlert){
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong>Ihr Passwort wurde erfolgreich geändert
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
-    if($passwordErr){
+
+    if($oldpasswordErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $passwordErr .' 
+        <strong>Error!</strong> '. $oldpasswordErr .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
-    if($exists){
+
+    if($wrongpasswordErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $exists .' 
+        <strong>Error!</strong> '. $wrongpasswordErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+
+    if($newpasswordErr){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $newpasswordErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+
+    if($confnewpasswordErr){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $confnewpasswordErr .' 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+
+    if($notmatchingErr){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $notmatchingErr .' 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
     }
@@ -81,10 +115,12 @@
     <div class="user-form">
         <form action="<?php $_SERVER["PHP_SELF"];?>" method="post">
             <p>Passwort ändern</p>
-            <label for="username">Username: </label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Passwort: </label><br>
-            <input type="password" id="password" name="password"><br><br>
+            <label for="oldpassword">Aktuelles Passwort: </label><br>
+            <input type="password" id="oldpassword" name="oldpassword"><br>
+            <label for="newpassword">Neues Passwort: </label><br>
+            <input type="password" id="newpassword" name="newpassword"><br>
+            <label for="password">Neues Passwort bestätigen: </label><br>
+            <input type="password" id="confnewpassword" name="confnewpassword"><br><br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
