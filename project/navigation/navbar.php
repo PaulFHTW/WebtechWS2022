@@ -32,7 +32,7 @@
             <?php }?>
             <?php if(isset($_SESSION['admin'])){?>
                 <li class="nav-item">
-                    <a class="nav-link" href="manageuser.php">Verwaltung</a>
+                    <a class="nav-link" href="verwaltung.php">Verwaltung</a>
                 </li> 
             <?php }?>
             <li class="nav-item">
