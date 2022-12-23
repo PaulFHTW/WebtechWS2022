@@ -49,7 +49,7 @@
                     $statusErr = "Ihr Nutzerkonto ist inaktiv";
                 }
                 //compare hashed password with typed in password
-                if(password_verify($password, $row['password'])){
+                else if(password_verify($password, $row['password'])){
                     $_SESSION['username'] = $username;
                     header("Location: profil.php");
                 }

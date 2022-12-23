@@ -17,29 +17,23 @@
     <?php include 'navigation/navbar.php'; ?>
 
 <?php
-    $sql = "SELECT * FROM user;";
-    $result = mysqli_query($conn, $sql);?>
-<p class="greeting">Nutzer Konten & Reservierungen</p>
+    $reservierungErr = "Sie haben noch keine Reservierungen!";?>
+
+    <p class="greeting">Nutzer Konten & Reservierungen</p>
         <div class="container">
             <div class="row justify-content-start">
                     <div class="col-lg-4">
                         <p class="room-desc">Nutzer Konten</p>
-                        <?php while($row = mysqli_fetch_assoc($result)){?>
-                            <?php
-                            if($row['status'] == 0){
-                                $accstatus = "Inaktiv";
-                            }
-                            if($row['status' == 1]){
-                                $accstatus = "Aktiv";
-                            }
-                            ?>
+                        <?php $sql = "SELECT * FROM user;";
+                        $result = mysqli_query($conn, $sql);
+                        while($row = mysqli_fetch_assoc($result)){?>
                         <li class="desc">Nutzer ID: <?php echo $row['UID']; ?></li>
                         <li class="desc">Anrede: <?php echo $row['anrede']; ?></li>
                         <li class="desc">Vorname: <?php echo $row['vorname']; ?></li>
                         <li class="desc">Nachname: <?php echo $row['nachname']; ?></li>
                         <li class="desc">Nutzername: <?php echo $row['username']; ?></li>
                         <li class="desc">E-Mail: <?php echo $row['email']; ?></li>
-                        <li class="desc">Status: <?php echo $accstatus; ?></li><br>
+                        <li class="desc">Status: <?php if($row['status'] == 0){ echo "Inaktiv";}else{echo "Aktiv";}?></li><br>
                         <p>-------------------------------------------------------</p>
                         <?php }?>
                         <a href="adminbearbeiten.php">
