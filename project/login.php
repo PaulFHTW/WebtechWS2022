@@ -61,7 +61,6 @@
             if($num == 0){
                 $exists = "Falscher Username oder Passwort";
             }
-
         }
     }
     

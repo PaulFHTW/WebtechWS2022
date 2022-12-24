@@ -109,20 +109,6 @@
         </div>';
     }
 
-    /*if($ankunftErr){
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $ankunftErr .' 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
-    }
-
-    if($abreiseErr){
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $abreiseErr .' 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
-    }*/
-
     if($roomErr){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> '. $roomErr .' 

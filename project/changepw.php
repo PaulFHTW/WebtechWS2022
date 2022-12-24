@@ -50,7 +50,8 @@
             $sql = "SELECT password FROM user WHERE username = '$username';";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
-    
+            
+            //if correct password is input user can change password
             if(password_verify($oldpassword, $row['password'])){
                 $sql = "UPDATE user SET password = '$hash' WHERE UID = '$UID';";
                 $result = mysqli_query($conn, $sql);

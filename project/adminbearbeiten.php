@@ -23,7 +23,7 @@
         $sql = "SELECT * FROM user WHERE UID = '$UID';";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
-
+        //old user data
         $anrede = $row['anrede'];
         $vorname = $row['vorname'];
         $nachname = $row['nachname'];
@@ -31,7 +31,7 @@
         $email = $row['email'];
         $password = $row['password'];
         $status = $row['accountstatus'];
-
+        //new user data
         $newanrede = $_POST['anrede'];
         $newvorname = $_POST['vorname'];
         $newnachname = $_POST['nachname'];
