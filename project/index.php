@@ -29,12 +29,23 @@
                 <div class="col-lg-12">
                     <h4 class="news">News</h4>
                     <br>
-                    <img src="uploads/pic1.png" class="img-thumbnail rounded float-end" alt="picture" height="600px" width="500px">
                     <?php
+                            $dir = "uploads";
+                            //get all files
+                            $files = glob($dir . "/*.*");
+                            //get last modification
+                            usort($files, function($a, $b){
+                                return (filemtime($a) < filemtime($b));
+                            });
+                            //get newest image
+                            $files = array_slice($files, 0, 1);
+                            //loop through images
+                            foreach($files as $file)
+                                echo "<img src='" . $file. "' alt='code' width='500px' class='img-thumbnail rounded float-end'>";
+                 
+                        //show newest post
                         $sql = "SELECT * FROM news ORDER BY date DESC;";
-
                         $result = mysqli_query($conn, $sql);
-
                         $num = mysqli_num_rows($result);
 
                         if($num > 0){
