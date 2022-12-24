@@ -41,7 +41,7 @@
                             while($row = mysqli_fetch_assoc($result)){?>
                             <li class="desc"><?php
                                 echo $row['text']."<br>";?>
-                            posted: <?php echo $row['date']."<br>";
+                            veröffentlicht: <?php echo $row['date']."<br>";
                             ?></li>
                             <?php
                             }

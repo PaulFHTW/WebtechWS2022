@@ -45,7 +45,7 @@
             $row = mysqli_fetch_assoc($result);
 
             if($num > 0){
-                if($row['status'] == 0){
+                if($row['accountstatus'] == 0){
                     $statusErr = "Ihr Nutzerkonto ist inaktiv";
                 }
                 //compare hashed password with typed in password

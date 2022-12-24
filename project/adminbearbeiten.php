@@ -30,7 +30,7 @@
         $accountname = $row['username'];
         $email = $row['email'];
         $password = $row['password'];
-        $status = $row['status'];
+        $status = $row['accountstatus'];
 
         $newanrede = $_POST['anrede'];
         $newvorname = $_POST['vorname'];
@@ -113,7 +113,7 @@
                 $sql = "UPDATE user SET password = '$newpassword' WHERE UID = '$UID';";
                 $result = mysqli_query($conn, $sql);
                 
-                $sql = "UPDATE user SET status = '$newstatus' WHERE UID = '$UID';";
+                $sql = "UPDATE user SET accountstatus = '$newstatus' WHERE UID = '$UID';";
                 $result = mysqli_query($conn, $sql);
 
                 if($result){

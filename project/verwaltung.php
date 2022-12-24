@@ -17,7 +17,7 @@
     <?php include 'navigation/navbar.php'; ?>
 
 <?php
-    $reservierungErr = "Sie haben noch keine Reservierungen!";?>
+    $reservierungErr = "KIeine Reservierungen!";?>
 
     <p class="greeting">Nutzer Konten & Reservierungen</p>
         <div class="container">
@@ -33,7 +33,7 @@
                         <li class="desc">Nachname: <?php echo $row['nachname']; ?></li>
                         <li class="desc">Nutzername: <?php echo $row['username']; ?></li>
                         <li class="desc">E-Mail: <?php echo $row['email']; ?></li>
-                        <li class="desc">Status: <?php if($row['status'] == 0){ echo "Inaktiv";}else{echo "Aktiv";}?></li><br>
+                        <li class="desc">Status: <?php if($row['accountstatus'] == 0){ echo "Inaktiv";}else{echo "Aktiv";}?></li><br>
                         <p>-------------------------------------------------------</p>
                         <?php }?>
                         <a href="adminbearbeiten.php">
@@ -74,6 +74,7 @@
                             $parkplatz = "Ja";
                         }
                     ?>
+                    <li class="desc">Reservierungs ID: <?php echo $row['RID']; ?></li>
                     <li class="desc">Nutzer ID: <?php echo $row['UID']; ?></li> 
                     <li class="desc">Nutzer: <?php echo $row['username']; ?></li>  
                     <li class="desc">Personen Anzahl: <?php echo $row['personen']; ?></li>

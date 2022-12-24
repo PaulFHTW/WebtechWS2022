@@ -25,16 +25,16 @@
     $row = mysqli_fetch_assoc($var2);
     $UID = $row['UID'];
     
-    $person = $_POST['person'];
+    $personen = $_POST['personen'];
     $suite = $_POST['suite'];
     $ankunft = $_POST['ankunft'];
     $abreise = $_POST['abreise'];
     $tier = $_POST['tier'];
     $breakfast = $_POST['breakfast'];
     $parkplatz = $_POST['parkplatz'];
-    $status = "neu";
+    $status = "Neu";
 
-    if($person == "Personen Anzahl"){
+    if($personen == "Personen Anzahl"){
         $personErr = "Bitte suchen Sie die Anzahl der Personen aus";
     }
     if($suite == "Suite"){
@@ -75,7 +75,7 @@
     if($personErr == false && $suiteErr == false && $ankunftErr == false && $abreiseErr == false){
         if($num == 0){
         $sql = "INSERT INTO reservierung (tier, parkplatz, breakfast, personen, suite, ankunft, abreise, status, FK_UID) VALUES 
-        ('$tier', '$parkplatz', '$breakfast', '$person', '$suite', '$ankunft', '$abreise', '$status', '$UID');";
+        ('$tier', '$parkplatz', '$breakfast', '$personen', '$suite', '$ankunft', '$abreise', '$status', '$UID');";
 
         $result = mysqli_query($conn, $sql);
 
@@ -152,7 +152,7 @@
         <div class="col-lg-4">
             <div class="room-form">
                 <form action="<?php $_SERVER[" PHP_SELF "];?>" method="post">
-                <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="person">
+                <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="personen">
                     <option selected>Personen Anzahl</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -164,7 +164,7 @@
                     <option value="Dreamer">Dreamer Deluxe Suite</option>
                     <option value="Sunshine">Sunshine Deluxe Suite</option>
                 </select>
-                    <label for="ankufnt">Ankunft: </label><br>
+                    <label for="ankunft">Ankunft: </label><br>
                     <input type="date" class="date" id="ankunft" name="ankunft"><br>
                     <label for="abreise">Abreise: </label><br>
                     <input type="date" class="date" id="abreise" name="abreise"><br><br>

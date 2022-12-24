@@ -33,7 +33,7 @@
     $nachname = $row['nachname'];
     $accountname = $row['username'];
     $email = $row['email'];
-    $accstatus = $row['status'];
+    $accstatus = $row['accountstatus'];
 
     if($accstatus == 0){
         $accstatus = "Inaktiv";
@@ -56,6 +56,7 @@
         $tier = $row['tier'];
         $parkplatz = $row['parkplatz'];
         $breakfast = $row['breakfast'];
+        $status = $row['status'];
 
         if($tier == 0){
             $tier = "Nein";
@@ -77,7 +78,7 @@
         if($parkplatz == 1){
             $parkplatz = "Ja";
         }
-        $status = $row['status'];
+
     }
     else{
         $reservierungErr = "Sie haben noch keine Reservierungen!";

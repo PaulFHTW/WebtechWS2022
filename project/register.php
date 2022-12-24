@@ -78,7 +78,7 @@
     
         if($anredeErr == false && $vornameErr == false && $nachnameErr == false && $usernameErr == false && $emailErr == false && $passwordErr == false && $confpasswordErr == false){
             if($num == 0){
-                $sql = "INSERT INTO user (anrede, vorname, nachname, username, email, password, status) VALUES ('$anrede', '$vorname', '$nachname', '$username', '$email', '$hash', '$status');";
+                $sql = "INSERT INTO user (anrede, vorname, nachname, username, email, password, accountstatus) VALUES ('$anrede', '$vorname', '$nachname', '$username', '$email', '$hash', '$status');";
         
                 $result = mysqli_query($conn, $sql);
         
